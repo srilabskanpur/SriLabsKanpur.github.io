@@ -12,9 +12,10 @@
         <h1>Admin Panel</h1>
 
         <!-- Add Gem Form -->
-        <h3>Add New Gem</h3>
-        <form action="admin.php" method="post" enctype="multipart/form-data">
-            <label>Report No:</label>
+
+
+        <form method="post" name="google.sheet">
+            <!-- <label>Report No:</label>
             <input type="text" name="reportNo" value="SRI/AA/" required>
 
             <label>Colour:</label>
@@ -51,13 +52,16 @@
             <input type="text" name="inclusions" value="Wood Grain Effect" required>
 
             <label>Remark:</label>
-            <input type="text" name="remark" value="N-E-H" required>
+            <input type="text" name="remark" value="N-E-H" required> -->
 
-            <label>Upload Gem Image:</label>
             <input type="file" name="gemImage" accept="image/*" required>
 
-            <input type="submit" name="addGem" value="Add Gem">
+            <input type="submit" name="addGem" value="Upload Image">
         </form>
+
+        
+
+        <script src="https://sheetdb.io/s/f/o0ztocu2dlr3b.js"></script>
 
         <hr>
 
@@ -66,12 +70,21 @@
         <table>
             <thead>
                 <tr>
+                    <th>Image</th>
+                    <th>Identified As</th>
                     <th>Report No</th>
                     <th>Colour</th>
                     <th>Weight</th>
                     <th>Species</th>
-                    <th>Image</th>
-                    <th>Delete</th>
+                    <th>Shape</th>
+                    <th>Transparency</th>
+                    <th>Optic Character</th>
+                    <th>RI</th>
+                    <th>SG</th>
+                    <th>MM</th>
+                    <th>Hardness</th>
+                    <th>Inclusions</th>
+                    <th>Remark</th>
                 </tr>
             </thead>
             <tbody>
