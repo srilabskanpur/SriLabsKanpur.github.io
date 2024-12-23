@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel - Add & Manage Gems</title>
+    <link rel="stylesheet" href="css/admin-style.css">
+
+</head>
+<body>
+    <div class="container">
+        <h1>Admin Panel</h1>
+
+        <!-- Add Gem Form -->
+        <h3>Add New Gem</h3>
+        <form action="admin.php" method="post" enctype="multipart/form-data">
+            <label>Report No:</label>
+            <input type="text" name="reportNo" value="SRI/AA/" required>
+
+            <label>Colour:</label>
+            <input type="text" name="colour" required>
+
+            <label>Weight:</label>
+            <input type="text" name="weight" required>
+
+            <label>Species/Group:</label>
+            <input type="text" name="species" required>
+
+            <label>Shape & Cut:</label>
+            <input type="text" name="shape" required>
+
+            <label>Transparency:</label>
+            <input type="text" name="transparency" value="Opaque" required>
+
+            <label>Optic Character:</label>
+            <input type="text" name="optic" value="none" required>
+
+            <label>R.I.:</label>
+            <input type="text" name="ri" value="1.486-1.658" required>
+
+            <label>SG:</label>
+            <input type="text" name="sg" value="2.6-2.7" required>
+
+            <label>MM:</label>
+            <input type="text" name="mm" value="N/A" required>
+
+            <label>Hardness:</label>
+            <input type="text" name="hardness" value="3.5" required>
+
+            <label>Inclusions:</label>
+            <input type="text" name="inclusions" value="Wood Grain Effect" required>
+
+            <label>Remark:</label>
+            <input type="text" name="remark" value="N-E-H" required>
+
+            <label>Upload Gem Image:</label>
+            <input type="file" name="gemImage" accept="image/*" required>
+
+            <input type="submit" name="addGem" value="Add Gem">
+        </form>
+
+        <hr>
+
+        <!-- View and Delete Gems -->
+        <h3>Existing Gems</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Report No</th>
+                    <th>Colour</th>
+                    <th>Weight</th>
+                    <th>Species</th>
+                    <th>Image</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php
+                // Fetch and display gems from database (this will be processed by PHP)
+                include('admin.php');
+                ?>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
