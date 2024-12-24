@@ -1,99 +1,276 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Panel - Add & Manage Gems</title>
     <link rel="stylesheet" href="css/admin-style.css">
+    <link href="./css/image-upload-mobile-style.css" rel="stylesheet" media="screen">
+    <link href="./css/image-upload-mobile-style.css" rel="stylesheet" media="screen">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
 </head>
+
 <body>
     <div class="container">
-        <h1>Admin Panel</h1>
+        <h1
+            style="text-align: center; font-size: 3em; color: #333; margin-bottom: 30px; font-weight: bold; text-transform: uppercase; letter-spacing: 2px; text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1), 0 0 25px rgba(0, 255, 0, 0.4);">
+            Admin Panel</h1>
+
+
+        <br>
+
+        <p><br></p>
+
+        <script type="text/javascript" src="./js/imgur.js"></script>
+        <script type="text/javascript" src="./js/upload.js"></script>
 
         <!-- Add Gem Form -->
+        <form method="post"
+            action="https://script.google.com/macros/s/AKfycbzoPxdoHOjfEV_glNLHsabCMruD8smItxFg7ZOwZOKWXnfzdReYSE7SvfAoWVwwkNSi/exec"
+            name=""
+            style="max-width: 600px; margin: auto; padding: 20px; background-color: #f9f9f9; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); font-family: Arial, sans-serif;">
+            <h2 style="text-align: center; color: #333; font-size: 1.6em; margin-bottom: 20px;">Gem Submission Form</h2>
 
+            <div style="margin-bottom: 15px;">
+                <label style="display: block; font-weight: bold; margin-bottom: 5px;">Identified As:</label>
+                <input type="text" name="identifiedAs" value="" required
+                    style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #ccc; box-sizing: border-box; font-size: 1em; transition: all 0.3s ease;">
+            </div>
 
-        <form method="post" name="google.sheet">
-            <!-- <label>Report No:</label>
-            <input type="text" name="reportNo" value="SRI/AA/" required>
+            <div style="margin-bottom: 15px;">
+                <label style="display: block; font-weight: bold; margin-bottom: 5px;">Report No:</label>
+                <input type="text" name="reportNo" value="SRI/AA/" required
+                    style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #ccc; box-sizing: border-box; font-size: 1em; transition: all 0.3s ease;">
+            </div>
 
-            <label>Colour:</label>
-            <input type="text" name="colour" required>
+            <div style="margin-bottom: 15px;">
+                <label style="display: block; font-weight: bold; margin-bottom: 5px;">Colour:</label>
+                <input type="text" name="colour" required
+                    style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #ccc; box-sizing: border-box; font-size: 1em; transition: all 0.3s ease;">
+            </div>
 
-            <label>Weight:</label>
-            <input type="text" name="weight" required>
+            <div style="margin-bottom: 15px;">
+                <label style="display: block; font-weight: bold; margin-bottom: 5px;">Weight:</label>
+                <input type="text" name="weight" required
+                    style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #ccc; box-sizing: border-box; font-size: 1em; transition: all 0.3s ease;">
+            </div>
 
-            <label>Species/Group:</label>
-            <input type="text" name="species" required>
+            <div style="margin-bottom: 15px;">
+                <label style="display: block; font-weight: bold; margin-bottom: 5px;">Species/Group:</label>
+                <input type="text" name="species" required
+                    style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #ccc; box-sizing: border-box; font-size: 1em; transition: all 0.3s ease;">
+            </div>
 
-            <label>Shape & Cut:</label>
-            <input type="text" name="shape" required>
+            <div style="margin-bottom: 15px;">
+                <label style="display: block; font-weight: bold; margin-bottom: 5px;">Shape & Cut:</label>
+                <input type="text" name="shape" required
+                    style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #ccc; box-sizing: border-box; font-size: 1em; transition: all 0.3s ease;">
+            </div>
 
-            <label>Transparency:</label>
-            <input type="text" name="transparency" value="Opaque" required>
+            <div style="margin-bottom: 15px;">
+                <label style="display: block; font-weight: bold; margin-bottom: 5px;">Transparency:</label>
+                <input type="text" name="transparency" value="Opaque" required
+                    style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #ccc; box-sizing: border-box; font-size: 1em; transition: all 0.3s ease;">
+            </div>
 
-            <label>Optic Character:</label>
-            <input type="text" name="optic" value="none" required>
+            <div style="margin-bottom: 15px;">
+                <label style="display: block; font-weight: bold; margin-bottom: 5px;">Optic Character:</label>
+                <input type="text" name="optic" value="none" required
+                    style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #ccc; box-sizing: border-box; font-size: 1em; transition: all 0.3s ease;">
+            </div>
 
-            <label>R.I.:</label>
-            <input type="text" name="ri" value="1.486-1.658" required>
+            <div style="margin-bottom: 15px;">
+                <label style="display: block; font-weight: bold; margin-bottom: 5px;">R.I.:</label>
+                <input type="text" name="ri" value="1.486-1.658" required
+                    style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #ccc; box-sizing: border-box; font-size: 1em; transition: all 0.3s ease;">
+            </div>
 
-            <label>SG:</label>
-            <input type="text" name="sg" value="2.6-2.7" required>
+            <div style="margin-bottom: 15px;">
+                <label style="display: block; font-weight: bold; margin-bottom: 5px;">SG:</label>
+                <input type="text" name="sg" value="2.6-2.7" required
+                    style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #ccc; box-sizing: border-box; font-size: 1em; transition: all 0.3s ease;">
+            </div>
 
-            <label>MM:</label>
-            <input type="text" name="mm" value="N/A" required>
+            <div style="margin-bottom: 15px;">
+                <label style="display: block; font-weight: bold; margin-bottom: 5px;">MM:</label>
+                <input type="text" name="mm" value="N/A" required
+                    style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #ccc; box-sizing: border-box; font-size: 1em; transition: all 0.3s ease;">
+            </div>
 
-            <label>Hardness:</label>
-            <input type="text" name="hardness" value="3.5" required>
+            <div style="margin-bottom: 15px;">
+                <label style="display: block; font-weight: bold; margin-bottom: 5px;">Hardness:</label>
+                <input type="text" name="hardness" value="3.5" required
+                    style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #ccc; box-sizing: border-box; font-size: 1em; transition: all 0.3s ease;">
+            </div>
 
-            <label>Inclusions:</label>
-            <input type="text" name="inclusions" value="Wood Grain Effect" required>
+            <div style="margin-bottom: 15px;">
+                <label style="display: block; font-weight: bold; margin-bottom: 5px;">Inclusions:</label>
+                <input type="text" name="inclusions" value="Wood Grain Effect" required
+                    style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #ccc; box-sizing: border-box; font-size: 1em; transition: all 0.3s ease;">
+            </div>
 
-            <label>Remark:</label>
-            <input type="text" name="remark" value="N-E-H" required> -->
+            <div style="margin-bottom: 15px;">
+                <label style="display: block; font-weight: bold; margin-bottom: 5px;">Remark:</label>
+                <input type="text" name="remark" value="N-E-H" required
+                    style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #ccc; box-sizing: border-box; font-size: 1em; transition: all 0.3s ease;">
+            </div>
 
-            <input type="file" name="gemImage" accept="image/*" required>
+            <!-- <div style="margin-bottom: 15px;">
+                <label style="display: block; font-weight: bold; margin-bottom: 5px;">Image Link:</label>
+                <input type="text" name="gemImage" id="imgLink" required
+                    style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #ccc; box-sizing: border-box; font-size: 1em; transition: all 0.3s ease;">
+            </div> -->
 
-            <input type="submit" name="addGem" value="Upload Image">
+            <input type="file" accept="image/*" id="imageUpload" style="display: none;" onchange="previewImage();">
+            <div style="display: flex; justify-content: center; align-items: center; width: 100%; max-width: 600px; margin: 0 auto;">
+                <label for="imageUpload"
+                    style="flex: 1; padding: 10px 20px; background-color: #0044cc; color: #fff; cursor: pointer; font-weight: bold; border-radius: 5px; text-align: center; display: inline-block; margin-right: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); transition: all 0.3s ease;">
+                    Upload Image
+                </label>
+                <input type="file" accept="image/*" id="imageUpload" style="display: none;" onchange="previewImage();">
+                
+                <input type="submit" name="addGem" value="Submit"
+                    style="flex: 1; background-color: #4CAF50; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; font-size: 1.1em; transition: all 0.3s ease; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+                
+            </div>          
+            <img src="" id="testImg" alt="">  
         </form>
 
-        
 
-        <script src="https://sheetdb.io/s/f/o0ztocu2dlr3b.js"></script>
+
+
+        <!-- <script src="https://sheetdb.io/s/f/o0ztocu2dlr3b.js"></script> -->
+
+        <!-- <script src="https://sheetdb.io/s/t/w4t8wp8prpp3g.js"></script> -->
 
         <hr>
 
-        <!-- View and Delete Gems -->
-        <h3>Existing Gems</h3>
-        <table>
-            <thead>
-                <tr>
-                    <th>Image</th>
-                    <th>Identified As</th>
-                    <th>Report No</th>
-                    <th>Colour</th>
-                    <th>Weight</th>
-                    <th>Species</th>
-                    <th>Shape</th>
-                    <th>Transparency</th>
-                    <th>Optic Character</th>
-                    <th>RI</th>
-                    <th>SG</th>
-                    <th>MM</th>
-                    <th>Hardness</th>
-                    <th>Inclusions</th>
-                    <th>Remark</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php
-                // Fetch and display gems from database (this will be processed by PHP)
-                include('admin.php');
-                ?>
-            </tbody>
-        </table>
+        
+
+        <h3 style="text-align: center; font-size: 1.8em; margin-bottom: 20px; color: #333;">
+            <a href="https://docs.google.com/spreadsheets/d/1UPv08ysDPEewRUWMPWMCShLbkkB8NnT6Dx9Vm7HaYtU/edit?gid=0#gid=0"
+                style="color: #4CAF50; text-decoration: none; padding: 8px 20px; border-radius: 5px; border: 2px solid #4CAF50; transition: all 0.3s ease;">
+                Registered Gems
+            </a>
+        </h3>
+
+        
+
+
+
+        <!-- Table -->
+        <div
+            style="overflow: auto; max-width: 100%; max-height: 400px; border-radius: 10px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);">
+            <table
+                style="width: 100%; border-collapse: collapse; min-width: 600px; background-color: #f9f9f9; border-radius: 10px; overflow: hidden;">
+                <thead>
+                    <tr>
+                        <th>Identified As</th>
+                        <th>Report No</th>
+                        <th>Colour</th>
+                        <th>Weight</th>
+                        <th>Species/Group</th>
+                        <th>Shape & Cut</th>
+                        <th>Transparency</th>
+                        <th>Optic Character</th>
+                        <th>R.I.</th>
+                        <th>SG</th>
+                        <th>MM</th>
+                        <th>Hardness</th>
+                        <th>Inclusions</th>
+                        <th>Remark</th>
+                        <th>Image</th>
+                    </tr>
+                </thead>
+                <tbody id="MyTBody"
+                    style="background-color: #ffffff; color: #333; font-size: 1.1em; word-wrap: break-word;">
+                    <!-- Empty since no content is added -->
+                </tbody>
+            </table>
+        </div>
+
+        <<h1>Image from Google Drive</h1>
+        <img src="https://drive.google.com/uc?id=1hyU-Q-Zca-nmwAnkdlKMTTMKEwIZagPH" alt="Google Drive Image" />
+    
+
+        <!-- Print Button -->
+
+        <h3 style="text-align: center; font-size: 1.8em; margin-bottom: 20px; color: #333;">
+            <a href="https://docs.google.com/spreadsheets/d/1UPv08ysDPEewRUWMPWMCShLbkkB8NnT6Dx9Vm7HaYtU/edit?gid=0#gid=0"
+                style="color: #4CAF50; text-decoration: none; padding: 8px 20px; border-radius: 5px; border: 2px solid #4CAF50; transition: all 0.3s ease;">
+                Print Card
+            </a>
+        </h3>
+
+        
+        <!-- Get Script -->
+        <script>
+
+            $(document).ready(function () {
+                $.getJSON("https://script.google.com/macros/s/AKfycbwflGfX3pz9yXMklqgAc9v5b21zP1M4LnMao1fdRkJsmDQlRI_CT33HgOrFm152Ufo3/exec",
+                    function (data) {
+
+                        var Table = "", Rows = "", Columns = "";
+
+                        $.each(data, function (key, value) {
+                            Columns = "";
+                            $.each(value, function (key1, value1) {
+                                Columns = Columns + '<td>' + value1 + '</td>';
+                            });
+                            Rows = Rows + '<tr>' + Columns + '</tr>';
+                        });
+
+                        $("#MyTBody").append(Rows);
+                    }
+
+                )
+            });
+
+        </script>
+
+
+
+        <!-- Image Script -->
+        <script>
+            // This line declares a variable called "url" and assigns it a value of "Api_Endpoint_Url"
+            let url = "https://script.google.com/macros/s/AKfycbwyor_t-f-mJrj-XrLrVgHgACsh-zJSxrpdwYj5zuq4MFIgFq4_E8XscpznfAkQHtorCg/exec";
+            // This line declares a variable called "file" and assigns it the value of the first input element on the page
+            let file = document.querySelector("#imageUpload");
+            // This line declares a variable called "img" and assigns it the value of the first image element on the page
+            let img = document.querySelector("#testImg");
+            // This line adds an event listener to the "change" event of the "file" input element
+            file.addEventListener('change',()=>{
+                // This line creates a new FileReader object called "fr"
+                let fr = new FileReader();
+                // This line adds an event listener to the "loadend" event of the FileReader object
+                fr.addEventListener('loadend',()=>{
+                    // This line declares a variable called "res" and assigns it the result of the FileReader object
+                    let res = fr.result;
+                    // This line sets the "src" attribute of the "img" element to the value of "res"
+                    img.src=res;
+                    
+                    // This line splits the "res" variable into an array, using the string "base64," as the separator, and assigns the second element to a variable called "spt"
+                    let spt = res.split("base64,")[1];
+                    // This line creates an object called "obj" with three properties: "base64", "type", and "name"
+                    let obj = {
+                        base64:spt,
+                        type:file.files[0].type,
+                        name:file.files[0].name
+                    }
+                    // This line sends a POST request to the URL specified in the "url" variable, with the "obj" object as the request body
+                    fetch(url,{
+                        method:"POST",
+                        body:JSON.stringify(obj)
+                    }).then(r=>r.text()).then(data=>console.log(data))
+         
+                })
+                // This line reads the selected file as a data URL
+                fr.readAsDataURL(file.files[0])
+            })
+        </script>
     </div>
 </body>
+
 </html>
