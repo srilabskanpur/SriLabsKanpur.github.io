@@ -80,7 +80,7 @@
 
 
     <!-- Form -->
-    <div class="container">
+    <div class="container" id="formForSearch">
         <h3 class="search">Search Results</h3>
         <div class="grid_3 grid_5">
             <form action="#" method="get">
@@ -101,10 +101,10 @@
 
     <!-- Card  -->    
 
-    
+    <div style="height: 20px;"></div>
 
-    <div
-        style="width: 90%; max-width: 450px; margin: 0 auto; border: 1px solid #000; padding: 10px; font-family: Arial, sans-serif; font-size: 12px;">
+    <div id="reportCard"
+        style="width: 90%; max-width: 450px; margin: 0 auto; border: 1px solid #000; padding: 10px; font-family: Arial, sans-serif; font-size: 12px;display: none;">
         <div style="text-align: center; margin-bottom: 1px;">
             <table style="width: 100%;  background-color: white; border: none;">
                 <tr style="border: #fff;">
@@ -148,14 +148,14 @@
                 <tr>
                     <th style="text-align: left; padding: 5px; border: 1px solid #ccc;">Colour</th>
                     <td id="colour" style="padding: 5px; border: 1px solid #ccc;">: Red</td>
-                    <td rowspan="8" style="text-align: center; padding: 5px; border: 1px solid #ccc;">
-                        <iframe src="https://drive.google.com/file/d/1NVre4S8KmGtEy48MfpxoMJgJlDLccA6r/preview" width="100%" height="260px"></iframe>
-   
+                    <td rowspan="4" colspan="2" style="text-align: center; padding: 5px; border: 1px solid #ccc;">
+                        <iframe id="imgGem" src="" width="100%" height="100%"></iframe>
                     </td>
                 </tr>
                 <tr>
                     <th style="text-align: left; padding: 5px; border: 1px solid #ccc;">Weight</th>
                     <td id="weight" style="padding: 5px; border: 1px solid #ccc;">: 5.50 Rt</td>
+                    
                 </tr>
                 <tr>
                     <th style="text-align: left; padding: 5px; border: 1px solid #ccc;">Species/Group</th>
@@ -168,6 +168,9 @@
                 <tr>
                     <th style="text-align: left; padding: 5px; border: 1px solid #ccc;">Transparency</th>
                     <td id="transparency" style="padding: 5px; border: 1px solid #ccc;">: Opaque</td>
+                    <td rowspan="4" colspan="2" style="text-align: center; padding: 5px; border: 1px solid #ccc;">
+                        <img src="images/qr.png" alt="qr code" width="100%" height="100%">
+                    </td>
                 </tr>
                 <tr>
                     <th style="text-align: left; padding: 5px; border: 1px solid #ccc;">Optic Character</th>
@@ -185,7 +188,7 @@
                     <th style="text-align: left; padding: 5px; border: 1px solid #ccc;">Hardness</th>
                     <td id="hardness" style="padding: 5px; border: 1px solid #ccc;">: 3.5</td>
                     <td id="mm" style="text-align: center; padding: 5px; border: 1px solid #ccc;">MM: N/A</td>
-                    <td id="mm" style="text-align: center; padding: 5px; border: 1px solid #ccc;">
+                    <td style="text-align: center; padding: 5px; border: 0px solid #ccc; border-color: #fff;background-color: #fff;">
                         <img class="logo-r" src="images/sign.png" alt="Logo" style="max-width: 100%; height: auto;background-color: #fff;border-color: #fff;">
                     </td>
                 </tr>
@@ -193,7 +196,7 @@
                     <th style="text-align: left; padding: 5px; border: 1px solid #ccc;">Inclusions</th>
                     <td id="inclusions" style="padding: 5px; border: 1px solid #ccc;" colspan="2">: Wood Grain Effect
                     </td>
-                    <td style="text-align: center; padding: 5px; border: 1px solid #ccc;">J.K. DWIVEDI GEMOLOGIST</td>
+                    <td style="text-align: center; padding: 5px; border: 1px solid #ccc;border-color: #fff;background-color: #fff;">KARAN VERMA, GEMOLOGIST</td>
                 </tr>
                 <tr>
                     <th style="text-align: left; padding: 5px; border: 1px solid #ccc;">Remark</th>
@@ -203,10 +206,18 @@
             </table>
         </div>
         <div
-            style="text-align: left; font-weight: bold; font-size: 14px; border: 1px solid #000; border-radius: 18px; padding: 8px; background-color: #e3e3e3;">
+            style="text-align: left; font-weight: bold; font-size: 14px; border: 1px solid #000; border-radius: 18px; padding: 8px; background-color: #e3e3e3;" id="identifyAs">
             IDENTIFIED AS :- NATURAL:-CORAL (MUNGA)
         </div>
     </div>
+
+    <!-- Not Found  -->
+
+    <div style="text-align: center;display: none;" id="notFound">
+        <h1>No such record found</h1>
+    </div>
+
+    <div style="height: 20px;"></div>
 
 
 
@@ -215,7 +226,7 @@
 
     <!-- Table -->
 
-    <div style="overflow-x: auto; overflow-y: auto; max-height: 500px; border: 1px solid #ddd; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); margin: 20px; padding: 10px;">
+    <div style="overflow-x: auto;display: none; overflow-y: auto; max-height: 500px; border: 1px solid #ddd; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); margin: 20px; padding: 10px;">
 
         <table style="width: 100%; border-collapse: collapse; font-family: Arial, sans-serif;">
             <thead style="background-color: #0044cc; ;text-align: left;">
@@ -242,7 +253,7 @@
             </tbody>
         </table>
     
-    </div>
+    </div> 
     
 
 
@@ -261,6 +272,7 @@
                 $.getJSON("https://script.google.com/macros/s/AKfycby0uS8neN8VpbxnmAIdpJbWF6KbsvvlwgbwrlZBc22FtZmtL12MKKs7JSxLPYEiONpd/exec", function (data) {
     
                     var Table = "", Rows = "", Columns = "";
+                    var found = false; // Flag to check if matching data is found
     
                     // Loop through the fetched data
                     $.each(data, function (key, value) {
@@ -270,7 +282,24 @@
     
                         // Convert value[3] to string and trim it, then compare
                         if (value[1].trim() === reportNo && String(value[3]).trim() === weight) {
+                            found = true; // Set the flag to true when data is found
                             Columns = "";
+                            document.getElementById("identifyAs").innerHTML = "IDENTIFIED AS :- NATURAL:-" + value[4] + ":-(" + value[0] + ")";
+                            document.getElementById("refNo").innerHTML = "RefNo: " + value[1];
+                            document.getElementById("colour").innerHTML = value[2];
+                            document.getElementById("weight").innerHTML = value[3] + " Rt";
+                            document.getElementById("species").innerHTML = value[4];
+                            document.getElementById("shapeCut").innerHTML = value[5];
+                            document.getElementById("transparency").innerHTML = value[6];
+                            document.getElementById("opticCharacter").innerHTML = value[7];
+                            document.getElementById("ri").innerHTML = value[8];
+                            document.getElementById("sg").innerHTML = value[9];
+                            document.getElementById("mm").innerHTML = "MM : " + value[10];
+                            document.getElementById("hardness").innerHTML = value[11];
+                            document.getElementById("inclusions").innerHTML = value[12];
+                            document.getElementById("remark").innerHTML = value[13];
+                            console.log(value[14].replace("/view", "/preview").split('?')[0]);
+                            document.getElementById("imgGem").src = value[14].replace("/view", "/preview").split('?')[0];
     
                             // Create a table row for each matching entry
                             $.each(value, function (key1, value1) {
@@ -287,10 +316,24 @@
                     } else {
                         $("#TableBody").html('<tr><td colspan="15">No matching data found.</td></tr>'); // Display a message if no data is found
                     }
+    
+                    // Show/hide the divs based on the result
+                    if (found) {
+                        // Show the report card and hide not found and form for search
+                        $("#reportCard").show();
+                        $("#notFound").hide();
+                        $("#formForSearch").hide();
+                    } else {
+                        // Hide the report card and show not found and form for search
+                        $("#reportCard").hide();
+                        $("#notFound").show();
+                        $("#formForSearch").hide();
+                    }
                 });
             });
         });
     </script>
+    
     
     
 
