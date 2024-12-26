@@ -9,6 +9,9 @@
     <link href="./css/image-upload-mobile-style.css" rel="stylesheet" media="screen">
     <link href="./css/image-upload-mobile-style.css" rel="stylesheet" media="screen">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="/js/fetchImage.js"></script>
+
+
 
 </head>
 
@@ -124,18 +127,19 @@
             </div> -->
 
             <input type="file" accept="image/*" id="imageUpload" style="display: none;" onchange="previewImage();">
-            <div style="display: flex; justify-content: center; align-items: center; width: 100%; max-width: 600px; margin: 0 auto;">
+            <div
+                style="display: flex; justify-content: center; align-items: center; width: 100%; max-width: 600px; margin: 0 auto;">
                 <label for="imageUpload"
                     style="flex: 1; padding: 10px 20px; background-color: #0044cc; color: #fff; cursor: pointer; font-weight: bold; border-radius: 5px; text-align: center; display: inline-block; margin-right: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); transition: all 0.3s ease;">
                     Upload Image
                 </label>
                 <input type="file" accept="image/*" id="imageUpload" style="display: none;" onchange="previewImage();">
-                
+
                 <input type="submit" name="addGem" value="Submit"
                     style="flex: 1; background-color: #4CAF50; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; font-size: 1.1em; transition: all 0.3s ease; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
-                
-            </div>          
-            <img src="" id="testImg" alt="">  
+
+            </div>
+            <img src="" id="testImg" alt="">
         </form>
 
 
@@ -147,7 +151,7 @@
 
         <hr>
 
-        
+
 
         <h3 style="text-align: center; font-size: 1.8em; margin-bottom: 20px; color: #333;">
             <a href="https://docs.google.com/spreadsheets/d/1UPv08ysDPEewRUWMPWMCShLbkkB8NnT6Dx9Vm7HaYtU/edit?gid=0#gid=0"
@@ -156,7 +160,7 @@
             </a>
         </h3>
 
-        
+
 
 
 
@@ -190,7 +194,7 @@
                 </tbody>
             </table>
         </div>
-  
+
 
         <!-- Print Button -->
 
@@ -201,7 +205,7 @@
             </a>
         </h3>
 
-        
+
         <!-- Get Script -->
         <script>
 
@@ -228,45 +232,52 @@
         </script>
 
 
+        <input type="text" id="fileUrl" placeholder="Enter file URL">
+        <button onclick="fetchAndSetImage(document.getElementById('fileUrl').value, 'imagePreview')">Fetch
+            Image</button>
+        <img id="imagePreview" alt="Image will appear here" style="max-width: 100px;">
+
+
 
         <!-- Image Script -->
         <script>
             // This line declares a variable called "url" and assigns it a value of "Api_Endpoint_Url"
-            let url = "https://script.google.com/macros/s/AKfycbwyor_t-f-mJrj-XrLrVgHgACsh-zJSxrpdwYj5zuq4MFIgFq4_E8XscpznfAkQHtorCg/exec";
+            let url = "https://script.google.com/macros/s/AKfycbxcmJ3IKTe4iNX0LN7wBP_AC58U5BwNmB2ZuPunwSe9aAdkiEkdsEsPYUmE_BI49zZE6g/exec";
             // This line declares a variable called "file" and assigns it the value of the first input element on the page
             let file = document.querySelector("#imageUpload");
             // This line declares a variable called "img" and assigns it the value of the first image element on the page
             let img = document.querySelector("#testImg");
             // This line adds an event listener to the "change" event of the "file" input element
-            file.addEventListener('change',()=>{
+            file.addEventListener('change', () => {
                 // This line creates a new FileReader object called "fr"
                 let fr = new FileReader();
                 // This line adds an event listener to the "loadend" event of the FileReader object
-                fr.addEventListener('loadend',()=>{
+                fr.addEventListener('loadend', () => {
                     // This line declares a variable called "res" and assigns it the result of the FileReader object
                     let res = fr.result;
                     // This line sets the "src" attribute of the "img" element to the value of "res"
-                    img.src=res;
-                    
+                    img.src = res;
+
                     // This line splits the "res" variable into an array, using the string "base64," as the separator, and assigns the second element to a variable called "spt"
                     let spt = res.split("base64,")[1];
                     // This line creates an object called "obj" with three properties: "base64", "type", and "name"
                     let obj = {
-                        base64:spt,
-                        type:file.files[0].type,
-                        name:file.files[0].name
+                        base64: spt,
+                        type: file.files[0].type,
+                        name: file.files[0].name
                     }
                     // This line sends a POST request to the URL specified in the "url" variable, with the "obj" object as the request body
-                    fetch(url,{
-                        method:"POST",
-                        body:JSON.stringify(obj)
-                    }).then(r=>r.text()).then(data=>console.log(data))
-         
+                    fetch(url, {
+                        method: "POST",
+                        body: JSON.stringify(obj)
+                    }).then(r => r.text()).then(data => console.log(data))
+
                 })
                 // This line reads the selected file as a data URL
                 fr.readAsDataURL(file.files[0])
             })
         </script>
+
     </div>
 </body>
 

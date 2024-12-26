@@ -10,6 +10,7 @@
     <!-- jQuery (Bootstrap's JavaScript plugins) -->
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    <script src="/js/fetchImage.js"></script>
     <!-- Custom Theme files -->
     <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
     <link href="css/top-header.css" rel="stylesheet" type="text/css" media="all" />
@@ -47,7 +48,7 @@
 
 <body>
     <!--banner-->
-    
+
     <div class="top-header" style="background-color:black;color:white;">
         <div class="container">
             <ul>
@@ -79,6 +80,7 @@
     </div>
 
 
+
     <!-- Form -->
     <div class="container" id="formForSearch">
         <h3 class="search">Search Results</h3>
@@ -99,38 +101,38 @@
 
 
 
-    <!-- Card  -->    
+    <!-- Card  -->
 
     <div style="height: 20px;"></div>
 
     <div id="reportCard"
-        style="width: 90%; max-width: 450px; margin: 0 auto; border: 1px solid #000; padding: 10px; font-family: Arial, sans-serif; font-size: 12px;display: none;">
+        style="width: 90%; max-width: 450px; margin: 0 auto; border: 1px solid #000; padding: 0px; font-family: Arial, sans-serif; font-size: 12px;display: none;">
         <div style="text-align: center; margin-bottom: 1px;">
-            <table style="width: 100%;  background-color: white; border: none;">
+            <table style="width: 100%; background-color: white; border: none;">
                 <tr style="border: #fff;">
-                    <th rowspan="3" style="width: 15%;background-color: #fff;border: #fff; text-align: center; padding: 5px;">
-                        <img class="logo-r" src="images/logo.png" alt="Logo" style="max-width: 100%; height: auto;">
+                    <th rowspan="2" style="width: 15%; background-color: #fff; border: #fff; text-align: center; padding: 5px;">
+                        <img class="logo-r" src="images/logo.png" alt="Logo" style="max-width: 100%; height: auto; margin-left: 20px;">
                     </th>
-                    <th colspan="3" style="font-size: 20px;border: #fff; color: #0044cc;background-color: #fff; font-weight: bold; text-align: center; padding: 0px;">
+                    <th colspan="3" style="font-size: 25px; border: #fff; color: #0044cc; background-color: #fff; font-weight: bold; text-align: center; padding: 0px;">
                         SRI LABS KANPUR
                     </th>
-                    <th rowspan="3" style="width: 15%;background-color: #fff;border: #fff; text-align: center; padding: 0px;">
-                        <img class="microscope" src="images/microscope-pan-pdf-removebg-preview.png" alt="Microscope"
-                            style="max-width: 100%; height: auto;">
+                    <th rowspan="2" style="width: 15%; background-color: #fff; border: #fff; text-align: center; padding: 10px; margin-right: 25px;">
+                        <img class="microscope" src="images/microscope-pan-pdf-removebg-preview.png" alt="Microscope" style="max-width: 100%; height: auto;">
                     </th>
                 </tr>
                 <tr>
-                    <th colspan="3" style="font-size: 14px;border: #fff;color: #0044cc;background-color: #fff; text-align: center; padding: 5px;">
-                        श्री लैब्स कानपुर
+                    <th colspan="3" style="font-size: 14px; border: #fff; color: #0044cc; background-color: #fff; text-align: center; padding: 0px;">
+                        श्री प्रयोगशाला कानपुर
                     </th>
                 </tr>
                 <tr>
-                    <td colspan="3" style="font-size: 12px;border: #fff; text-align: center; padding: 5px;">
-                        30/72A Etawa Bazar,Kanpur(UP) 
-                        <br>Email- srilabskanpur@gmail.com
+                    <!-- This row spans 5 columns and centers the content -->
+                    <td colspan="5" style="font-size: 12px; border: #fff; text-align: center; padding: 5px;">
+                        30/72A Etawa Bazar, Kanpur (UP) Email- srilabskanpur@gmail.com
                     </td>
                 </tr>
             </table>
+            
 
         </div>
         <div
@@ -149,13 +151,15 @@
                     <th style="text-align: left; padding: 5px; border: 1px solid #ccc;">Colour</th>
                     <td id="colour" style="padding: 5px; border: 1px solid #ccc;">: Red</td>
                     <td rowspan="4" colspan="2" style="text-align: center; padding: 5px; border: 1px solid #ccc;">
-                        <iframe id="imgGem" src="" width="100%" height="100%"></iframe>
+
+                        <img id="imgGem" src="" alt="Gem Image"
+                            style="max-width: 200px;max-height: 150px; object-fit: contain;">
                     </td>
                 </tr>
                 <tr>
                     <th style="text-align: left; padding: 5px; border: 1px solid #ccc;">Weight</th>
                     <td id="weight" style="padding: 5px; border: 1px solid #ccc;">: 5.50 Rt</td>
-                    
+
                 </tr>
                 <tr>
                     <th style="text-align: left; padding: 5px; border: 1px solid #ccc;">Species/Group</th>
@@ -167,36 +171,40 @@
                 </tr>
                 <tr>
                     <th style="text-align: left; padding: 5px; border: 1px solid #ccc;">Transparency</th>
-                    <td id="transparency" style="padding: 5px; border: 1px solid #ccc;">: Opaque</td>
-                    <td rowspan="4" colspan="2" style="text-align: center; padding: 5px; border: 1px solid #ccc;">
-                        <img src="images/qr.png" alt="qr code" width="100%" height="100%">
+                    <td colspan=2 id="transparency" style="padding: 5px; border: 1px solid #ccc;">: Opaque</td>
+                    <td rowspan="4" colspan="1" style="text-align: center; padding: 5px; border: 1px solid #ccc;">
+                        <img src="images/qr.png" alt="qr code" style="max-width: 100px; max-height: 100px;">
                     </td>
                 </tr>
                 <tr>
                     <th style="text-align: left; padding: 5px; border: 1px solid #ccc;">Optic Character</th>
-                    <td id="opticCharacter" style="padding: 5px; border: 1px solid #ccc;">: None</td>
+                    <td colspan=2 id="opticCharacter" style="padding: 5px; border: 1px solid #ccc;">: None</td>
                 </tr>
                 <tr>
                     <th style="text-align: left; padding: 5px; border: 1px solid #ccc;">R.I</th>
-                    <td id="ri" style="padding: 5px; border: 1px solid #ccc;">: 1.486-1.658</td>
+                    <td colspan=2 id="ri" style="padding: 5px; border: 1px solid #ccc;">: 1.486-1.658</td>
                 </tr>
                 <tr>
                     <th style="text-align: left; padding: 5px; border: 1px solid #ccc;">S.G</th>
-                    <td id="sg" style="padding: 5px; border: 1px solid #ccc;">: 2.6-2.7</td>
+                    <td colspan=2 id="sg" style="padding: 5px; border: 1px solid #ccc;">: 2.6-2.7</td>
                 </tr>
                 <tr>
                     <th style="text-align: left; padding: 5px; border: 1px solid #ccc;">Hardness</th>
                     <td id="hardness" style="padding: 5px; border: 1px solid #ccc;">: 3.5</td>
                     <td id="mm" style="text-align: center; padding: 5px; border: 1px solid #ccc;">MM: N/A</td>
-                    <td style="text-align: center; padding: 5px; border: 0px solid #ccc; border-color: #fff;background-color: #fff;">
-                        <img class="logo-r" src="images/sign.png" alt="Logo" style="max-width: 100%; height: auto;background-color: #fff;border-color: #fff;">
+                    <td
+                        style="text-align: center; padding: 5px; border: 0px solid #ccc; border-color: #fff;background-color: #fff;">
+                        <img class="logo-r" src="images/sign.png" alt="Logo"
+                            style="max-width: 100%; height: auto;background-color: #fff;border-color: #fff;">
                     </td>
                 </tr>
                 <tr>
                     <th style="text-align: left; padding: 5px; border: 1px solid #ccc;">Inclusions</th>
                     <td id="inclusions" style="padding: 5px; border: 1px solid #ccc;" colspan="2">: Wood Grain Effect
                     </td>
-                    <td style="text-align: center; padding: 5px; border: 1px solid #ccc;border-color: #fff;background-color: #fff;">KARAN VERMA, GEMOLOGIST</td>
+                    <td
+                        style="text-align: center; padding: 5px; border: 1px solid #ccc;border-color: #fff;background-color: #fff;">
+                        KARAN VERMA, GEMOLOGIST</td>
                 </tr>
                 <tr>
                     <th style="text-align: left; padding: 5px; border: 1px solid #ccc;">Remark</th>
@@ -205,17 +213,44 @@
                 </tr>
             </table>
         </div>
-        <div
-            style="text-align: left; font-weight: bold; font-size: 14px; border: 1px solid #000; border-radius: 18px; padding: 8px; background-color: #e3e3e3;" id="identifyAs">
+        <div style="text-align: left; font-weight: bold; font-size: 14px; border: 1px solid #000; border-radius: 18px; padding: 8px; background-color: #e3e3e3;"
+            id="identifyAs">
             IDENTIFIED AS :- NATURAL:-CORAL (MUNGA)
         </div>
     </div>
 
+
+    
+    <!-- Loading Screen -->
+    <div id="loadingSpinner"
+        style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; display: none; justify-content: center; align-items: center; background-color: rgba(255, 255, 255, 0.5);">
+        <div
+            style="width: 10vw; height: 10vw; border: 8px solid #f3f3f3; border-top: 8px solid #3498db; border-radius: 50%; animation: spin 1.5s linear infinite;">
+        </div>
+    </div>
+
+    <style>
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+
+
+
+
     <!-- Not Found  -->
 
-    <div style="text-align: center;display: none;" id="notFound">
-        <h1>No such record found</h1>
+    <div id="notFound"
+        style="display: none; text-align: center; padding: 50px; background-color: #f8d7da; border-radius: 8px; border: 1px solid #f5c6cb; color: #721c24; font-family: Arial, sans-serif; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); width: 80%; margin: 0 auto;">
+        <h1>No such record found!</h1>
     </div>
+
 
     <div style="height: 20px;"></div>
 
@@ -226,7 +261,8 @@
 
     <!-- Table -->
 
-    <div style="overflow-x: auto;display: none; overflow-y: auto; max-height: 500px; border: 1px solid #ddd; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); margin: 20px; padding: 10px;">
+    <div
+        style="overflow-x: auto;display: none; overflow-y: auto; max-height: 500px; border: 1px solid #ddd; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); margin: 20px; padding: 10px;">
 
         <table style="width: 100%; border-collapse: collapse; font-family: Arial, sans-serif;">
             <thead style="background-color: #0044cc; ;text-align: left;">
@@ -252,9 +288,9 @@
                 <!-- Dynamic table rows will be inserted here -->
             </tbody>
         </table>
-    
-    </div> 
-    
+
+    </div>
+
 
 
     <!-- Search Script -->
@@ -263,23 +299,26 @@
             // Handle form submission
             $("form").on("submit", function (event) {
                 event.preventDefault(); // Prevent form from submitting and page reloading
-    
+
+                document.getElementById("loadingSpinner").style.display = "flex";
+                $("#formForSearch").hide();
+
                 // Get the form values and trim any whitespace
                 var reportNo = $("input[name='reportNo']").val().trim();
                 var weight = $("input[name='weight']").val().trim();
-    
+
                 // Fetch all data from the Apps Script
                 $.getJSON("https://script.google.com/macros/s/AKfycby0uS8neN8VpbxnmAIdpJbWF6KbsvvlwgbwrlZBc22FtZmtL12MKKs7JSxLPYEiONpd/exec", function (data) {
-    
+
                     var Table = "", Rows = "", Columns = "";
                     var found = false; // Flag to check if matching data is found
-    
+
                     // Loop through the fetched data
                     $.each(data, function (key, value) {
                         // Log the value to see the exact comparison
                         console.log("Comparing Report No: " + value[1] + " with " + reportNo);
                         console.log("Comparing Weight: " + value[3] + " with " + weight);
-    
+
                         // Convert value[3] to string and trim it, then compare
                         if (value[1].trim() === reportNo && String(value[3]).trim() === weight) {
                             found = true; // Set the flag to true when data is found
@@ -299,32 +338,32 @@
                             document.getElementById("inclusions").innerHTML = value[12];
                             document.getElementById("remark").innerHTML = value[13];
                             console.log(value[14].replace("/view", "/preview").split('?')[0]);
-                            document.getElementById("imgGem").src = value[14].replace("/view", "/preview").split('?')[0];
-    
+                            // document.getElementById("imgGem").src = value[14].replace("/view", "/preview").split('?')[0];
+                            fetchAndSetImage(value[14], "imgGem")
                             // Create a table row for each matching entry
                             $.each(value, function (key1, value1) {
                                 Columns = Columns + '<td>' + value1 + '</td>';
                             });
-    
+
                             Rows = Rows + '<tr>' + Columns + '</tr>';
                         }
                     });
-    
+
                     // If matching rows are found, append them to the table body
                     if (Rows) {
                         $("#TableBody").html(Rows); // Update the table body with matching rows
                     } else {
                         $("#TableBody").html('<tr><td colspan="15">No matching data found.</td></tr>'); // Display a message if no data is found
                     }
-    
+
                     // Show/hide the divs based on the result
                     if (found) {
                         // Show the report card and hide not found and form for search
-                        $("#reportCard").show();
                         $("#notFound").hide();
                         $("#formForSearch").hide();
                     } else {
                         // Hide the report card and show not found and form for search
+                        document.getElementById("loadingSpinner").style.display = "none";
                         $("#reportCard").hide();
                         $("#notFound").show();
                         $("#formForSearch").hide();
@@ -333,11 +372,11 @@
             });
         });
     </script>
-    
-    
-    
 
-    
+
+
+
+
 </body>
 
 <div class="footer" style="background-color: blue; padding: 10px 0;">
