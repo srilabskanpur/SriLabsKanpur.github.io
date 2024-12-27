@@ -15,6 +15,7 @@
     <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
     <link href="css/top-header.css" rel="stylesheet" type="text/css" media="all" />
     <!-- Custom Theme files -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="keywords" content="Sri Labs Kanpur, India " />
@@ -41,14 +42,6 @@
             });
         });
     </script>
-    <!---- start-smoth-scrolling---->
-
-
-</head>
-
-<body>
-    <!--banner-->
-
     <div class="top-header" style="background-color:black;color:white;">
         <div class="container">
             <ul>
@@ -79,6 +72,15 @@
         </div>
     </div>
 
+    <!---- start-smoth-scrolling---->
+
+
+</head>
+
+<body>
+    <!--banner-->
+
+
 
 
     <!-- Form -->
@@ -103,63 +105,110 @@
 
     <!-- Card  -->
 
-    <div style="height: 20px;"></div>
 
-    <div id="reportCard"
-        style="width: 90%; max-width: 450px; margin: 0 auto; border: 1px solid #000; padding: 0px; font-family: Arial, sans-serif; font-size: 12px;display: none;">
-        <div style="text-align: center; margin-bottom: 1px;">
-            <table style="width: 100%; background-color: white; border: none;">
-                <tr style="border: #fff;">
-                    <th rowspan="2" style="width: 15%; background-color: #fff; border: #fff; text-align: center; padding: 5px;">
-                        <img class="logo-r" src="images/logo.png" alt="Logo" style="max-width: 100%; height: auto; margin-left: 20px;">
+    <div id="reportCard" style="width: 90%; margin: 5%; border: 1px solid #ccc; padding: 20px; font-family: Arial, sans-serif; font-size: 12px; 
+    border-radius: 15px; background-color: #e8f9e1; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);display: none;">
+        <div style="text-align: center; margin-bottom: 10px;">
+            <table style="
+            background-color: white; /* Clean white background */
+            width: 100%; 
+            border-radius: 15px; /* Rounded edges */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+            padding: 0px; 
+            margin-bottom: 0px;
+            border: 1px solid #4CAF50; /* Green border */
+            border-collapse: separate; /* Ensures rounded corners are visible */
+            overflow: hidden;">
+                <tr>
+                    <!-- Left logo taking 15% width -->
+                    <th rowspan="2" style="
+                    width: 15%; 
+                    text-align: center; 
+                    background-color: white;
+                    padding: 10px; 
+                    border: none;">
+                        <img src="images/logo.png" alt="Logo" style="max-height: 50px;">
                     </th>
-                    <th colspan="3" style="font-size: 25px; border: #fff; color: #0044cc; background-color: #fff; font-weight: bold; text-align: center; padding: 0px;">
+
+                    <!-- Center titles taking 70% width -->
+                    <th colspan="3" style="
+                    width: 70%; 
+                    font-size: 20px; 
+                    color: #4CAF50; /* Green text */
+                    font-weight: bold; 
+                    background-color: white;
+                    text-align: center; 
+                    border: none; 
+                    padding: 5px;">
                         SRI LABS KANPUR
                     </th>
-                    <th rowspan="2" style="width: 15%; background-color: #fff; border: #fff; text-align: center; padding: 10px; margin-right: 25px;">
-                        <img class="microscope" src="images/microscope-pan-pdf-removebg-preview.png" alt="Microscope" style="max-width: 100%; height: auto;">
+
+                    <!-- Right image taking 15% width -->
+                    <th rowspan="2" style="
+                    width: 15%; 
+                    text-align: center; 
+                    background-color: white;
+                    padding: 10px; 
+                    border: none;">
+                        <img src="images/microscope-pan-pdf-removebg-preview.png" alt="Microscope"
+                            style="max-height: 50px;">
                     </th>
                 </tr>
                 <tr>
-                    <th colspan="3" style="font-size: 14px; border: #fff; color: #0044cc; background-color: #fff; text-align: center; padding: 0px;">
+                    <!-- Hindi title underneath the English title -->
+                    <th colspan="3" style="
+                    font-size: 14px; 
+                    background-color: white;
+                    color: #4CAF50; /* Matches the main title color */
+                    text-align: center; 
+                    border: none; 
+                    padding: 0;">
                         श्री प्रयोगशाला कानपुर
                     </th>
                 </tr>
                 <tr>
-                    <!-- This row spans 5 columns and centers the content -->
-                    <td colspan="5" style="font-size: 12px; border: #fff; text-align: center; padding: 5px;">
-                        30/72A Etawa Bazar, Kanpur (UP) Email- srilabskanpur@gmail.com
+                    <!-- Full-width address line -->
+                    <td colspan="5" style="
+                    font-size: 12px; 
+                    color: #333; 
+                    text-align: center; 
+                    padding: 10px; 
+                    border: none;">
+                        30/72A Etawa Bazar, Kanpur (UP) | Email: srilabskanpur@gmail.com
                     </td>
                 </tr>
             </table>
-            
 
         </div>
-        <div
-            style="text-align: center; font-weight: bold;margin-left:25%;margin-right:25%;border-radius: 30px; background-color: #0044cc; color: #fff; padding: 8px; margin-bottom: 10px;">
+        <div style="text-align: center; font-weight: bold; margin: 15px auto; border-radius: 30px; background-color: #388E3C; 
+            color: #fff; padding: 10px; width: 100%; box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);">
             Gems Testing Report
         </div>
-        <div>
-            <table style="width: 100%; border-collapse: collapse; margin-bottom: 10px;">
+
+        <div
+            style="overflow-x: auto; border-radius: 10px; box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); margin-bottom: 10px; background-color: white; padding: 5px;margin-bottom: 15px;
+            border: 1px solid #4CAF50; /* Green border */">
+            <table style="width: 100%; border-collapse: collapse; background-color: white;">
                 <tr>
-                    <th style="text-align: left; padding: 5px; width: 25%; border: 1px solid #ccc;">Submitted By</th>
-                    <td id="submittedBy" style="padding: 5px; border: 1px solid #ccc; width: 50%;" colspan="2">:</td>
-                    <td id="refNo" style="text-align: center; padding: 5px; border: 1px solid #ccc; width: 25%;">RefNo:
+                    <th style="text-align: left; padding: 5px; width: 25%; border: 1px solid #ccc;">Submitted By
+                    </th>
+                    <td id="submittedBy" style="padding: 5px; border: 1px solid #ccc; width: 50%;" colspan="2">:
+                    </td>
+                    <td id="refNo" style="text-align: center; padding: 5px; border: 1px solid #ccc; width: 25%;">
+                        RefNo:
                         SRI/AA/6154</td>
                 </tr>
                 <tr>
                     <th style="text-align: left; padding: 5px; border: 1px solid #ccc;">Colour</th>
                     <td id="colour" style="padding: 5px; border: 1px solid #ccc;">: Red</td>
                     <td rowspan="4" colspan="2" style="text-align: center; padding: 5px; border: 1px solid #ccc;">
-
                         <img id="imgGem" src="" alt="Gem Image"
-                            style="max-width: 200px;max-height: 150px; object-fit: contain;">
+                            style="max-width: 200px; max-height: 150px; object-fit: contain;">
                     </td>
                 </tr>
                 <tr>
                     <th style="text-align: left; padding: 5px; border: 1px solid #ccc;">Weight</th>
                     <td id="weight" style="padding: 5px; border: 1px solid #ccc;">: 5.50 Rt</td>
-
                 </tr>
                 <tr>
                     <th style="text-align: left; padding: 5px; border: 1px solid #ccc;">Species/Group</th>
@@ -192,19 +241,18 @@
                     <th style="text-align: left; padding: 5px; border: 1px solid #ccc;">Hardness</th>
                     <td id="hardness" style="padding: 5px; border: 1px solid #ccc;">: 3.5</td>
                     <td id="mm" style="text-align: center; padding: 5px; border: 1px solid #ccc;">MM: N/A</td>
-                    <td
-                        style="text-align: center; padding: 5px; border: 0px solid #ccc; border-color: #fff;background-color: #fff;">
+                    <td style="text-align: center; padding: 5px; border: 1px solid white; background-color: white;">
                         <img class="logo-r" src="images/sign.png" alt="Logo"
-                            style="max-width: 100%; height: auto;background-color: #fff;border-color: #fff;">
+                            style="max-width: 100%; height: auto; background-color: white;">
                     </td>
                 </tr>
                 <tr>
                     <th style="text-align: left; padding: 5px; border: 1px solid #ccc;">Inclusions</th>
-                    <td id="inclusions" style="padding: 5px; border: 1px solid #ccc;" colspan="2">: Wood Grain Effect
+                    <td id="inclusions" style="padding: 5px; border: 1px solid #ccc;" colspan="2">: Wood Grain
+                        Effect</td>
+                    <td style="text-align: center; padding: 5px; border: 1px solid white; background-color: white;">
+                        KARAN VERMA, GEMOLOGIST
                     </td>
-                    <td
-                        style="text-align: center; padding: 5px; border: 1px solid #ccc;border-color: #fff;background-color: #fff;">
-                        KARAN VERMA, GEMOLOGIST</td>
                 </tr>
                 <tr>
                     <th style="text-align: left; padding: 5px; border: 1px solid #ccc;">Remark</th>
@@ -213,14 +261,21 @@
                 </tr>
             </table>
         </div>
-        <div style="text-align: left; font-weight: bold; font-size: 14px; border: 1px solid #000; border-radius: 18px; padding: 8px; background-color: #e3e3e3;"
-            id="identifyAs">
+
+        <div style="text-align: left; font-weight: bold; font-size: 14px; border: 1px solid #000; border-radius: 18px; padding: 8px; 
+    background-color: #d6f7d6; margin: 10px; box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);" id="identifyAs">
             IDENTIFIED AS :- NATURAL:-CORAL (MUNGA)
         </div>
     </div>
 
 
-    
+
+    <!-- Download The Report -->
+
+
+
+
+
     <!-- Loading Screen -->
     <div id="loadingSpinner"
         style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; display: none; justify-content: center; align-items: center; background-color: rgba(255, 255, 255, 0.5);">
@@ -255,41 +310,6 @@
     <div style="height: 20px;"></div>
 
 
-
-
-
-
-    <!-- Table -->
-
-    <div
-        style="overflow-x: auto;display: none; overflow-y: auto; max-height: 500px; border: 1px solid #ddd; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); margin: 20px; padding: 10px;">
-
-        <table style="width: 100%; border-collapse: collapse; font-family: Arial, sans-serif;">
-            <thead style="background-color: #0044cc; ;text-align: left;">
-                <tr>
-                    <th style="padding: 10px; border-bottom: 2px solid #ddd;">Identified As</th>
-                    <th style="padding: 10px; border-bottom: 2px solid #ddd;">Report No</th>
-                    <th style="padding: 10px; border-bottom: 2px solid #ddd;">Colour</th>
-                    <th style="padding: 10px; border-bottom: 2px solid #ddd;">Weight</th>
-                    <th style="padding: 10px; border-bottom: 2px solid #ddd;">Species/Group</th>
-                    <th style="padding: 10px; border-bottom: 2px solid #ddd;">Shape & Cut</th>
-                    <th style="padding: 10px; border-bottom: 2px solid #ddd;">Transparency</th>
-                    <th style="padding: 10px; border-bottom: 2px solid #ddd;">Optic Character</th>
-                    <th style="padding: 10px; border-bottom: 2px solid #ddd;">R.I.</th>
-                    <th style="padding: 10px; border-bottom: 2px solid #ddd;">SG</th>
-                    <th style="padding: 10px; border-bottom: 2px solid #ddd;">MM</th>
-                    <th style="padding: 10px; border-bottom: 2px solid #ddd;">Hardness</th>
-                    <th style="padding: 10px; border-bottom: 2px solid #ddd;">Inclusions</th>
-                    <th style="padding: 10px; border-bottom: 2px solid #ddd;">Remark</th>
-                    <th style="padding: 10px; border-bottom: 2px solid #ddd;">Image</th>
-                </tr>
-            </thead>
-            <tbody id="TableBody">
-                <!-- Dynamic table rows will be inserted here -->
-            </tbody>
-        </table>
-
-    </div>
 
 
 
@@ -361,12 +381,15 @@
                         // Show the report card and hide not found and form for search
                         $("#notFound").hide();
                         $("#formForSearch").hide();
+                        $("#reportCard").show();
+                        $("#downloadBtn").show();
                     } else {
                         // Hide the report card and show not found and form for search
                         document.getElementById("loadingSpinner").style.display = "none";
                         $("#reportCard").hide();
                         $("#notFound").show();
                         $("#formForSearch").hide();
+                        $("#downloadBtn").hide();
                     }
                 });
             });
