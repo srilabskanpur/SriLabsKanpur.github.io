@@ -11,6 +11,10 @@
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="/js/fetchImage.js"></script>
+    <!-- <script src = "https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js">
+    </script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.js">
+    </script>
     <!-- Custom Theme files -->
     <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
     <link href="css/top-header.css" rel="stylesheet" type="text/css" media="all" />
@@ -77,7 +81,7 @@
 
 </head>
 
-<body>
+<body onload="autoClick();">
     <!--banner-->
 
 
@@ -185,8 +189,7 @@
             Gems Testing Report
         </div>
 
-        <div
-            style="overflow-x: auto; border-radius: 10px; box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); margin-bottom: 10px; background-color: white; padding: 5px;margin-bottom: 15px;
+        <div style="overflow-x: auto; border-radius: 10px; box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); margin-bottom: 10px; background-color: white; padding: 5px;margin-bottom: 15px;
             border: 1px solid #4CAF50; /* Green border */">
             <table style="width: 100%; border-collapse: collapse; background-color: white;">
                 <tr>
@@ -272,15 +275,75 @@
 
     <!-- Download The Report -->
 
+    <a id="download" href="#"
+        style="display: inline-block; padding: 10px 20px; background-color: #4CAF50; color: white; text-align: center; 
+   text-decoration: none; font-size: 16px; font-weight: bold; border-radius: 8px; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); 
+   transition: background-color 0.3s ease, transform 0.2s ease; margin: 20px auto; display: block; width: 150px; cursor: pointer;">
+        Download Report
+    </a>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#download").on("click", function (e) {
+                e.preventDefault(); // Prevents the default anchor action
+
+                var element = document.getElementById("reportCard");
+
+                if (!element) {
+                    $("#errorField").val("Error: #reportCard element not found.");
+                    return;
+                }
+
+                // Temporarily show the report card
+                element.style.display = "block";
+
+                // Wait for the content to be fully rendered
+                html2canvas(element, { useCORS: true, logging: true })
+                    .then(function (canvas) {
+                        var imageData = canvas.toDataURL("image/jpeg");
+
+                        // Create an invisible temporary link to trigger download
+                        var tempLink = document.createElement('a');
+                        tempLink.href = imageData;
+                        tempLink.download = "reportCard.jpg";
+
+                        // Append the link to the body to trigger the download
+                        document.body.appendChild(tempLink);
+                        tempLink.click();
+
+                        // Remove the temporary link after triggering the download
+                        document.body.removeChild(tempLink);
+
+                        // Hide the report card again after download
+                        // element.style.display = "none";
+
+                        // Clear error field if any
+                        // $("#errorField").val("");
+                    })
+                    .catch(function (error) {
+                        // Handle errors if any
+                        // $("#errorField").val("Error capturing screenshot: " + error.message);
+                        console.error("Error:", error);
+                    });
+            });
+        });
+    </script>
+
+
 
 
 
 
     <!-- Loading Screen -->
     <div id="loadingSpinner"
-        style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; display: none; justify-content: center; align-items: center; background-color: rgba(255, 255, 255, 0.5);">
+        style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; display: none; justify-content: center; align-items: center; background-color: rgba(255, 255, 255, 0.5); flex-direction: column;">
         <div
             style="width: 10vw; height: 10vw; border: 8px solid #f3f3f3; border-top: 8px solid #3498db; border-radius: 50%; animation: spin 1.5s linear infinite;">
+        </div>
+        <div id="loadingTag"
+            style="margin-top: 10px; font-family: Arial, sans-serif; font-size: 1.2rem; font-weight: bold; color: #555; text-align: center;">
+            Searching...
         </div>
     </div>
 
@@ -299,7 +362,10 @@
 
 
 
+
+
     <!-- Not Found  -->
+    <div style="height: 20px;"></div>
 
     <div id="notFound"
         style="display: none; text-align: center; padding: 50px; background-color: #f8d7da; border-radius: 8px; border: 1px solid #f5c6cb; color: #721c24; font-family: Arial, sans-serif; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); width: 80%; margin: 0 auto;">
@@ -357,6 +423,7 @@
                             document.getElementById("hardness").innerHTML = value[11];
                             document.getElementById("inclusions").innerHTML = value[12];
                             document.getElementById("remark").innerHTML = value[13];
+                            document.getElementById("loadingTag").innerHTML = "Loading Image...";
                             console.log(value[14].replace("/view", "/preview").split('?')[0]);
                             // document.getElementById("imgGem").src = value[14].replace("/view", "/preview").split('?')[0];
                             fetchAndSetImage(value[14], "imgGem")
@@ -381,7 +448,6 @@
                         // Show the report card and hide not found and form for search
                         $("#notFound").hide();
                         $("#formForSearch").hide();
-                        $("#reportCard").show();
                         $("#downloadBtn").show();
                     } else {
                         // Hide the report card and show not found and form for search
