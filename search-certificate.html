@@ -109,7 +109,7 @@
 
     <!-- Card  -->
 
-
+    <div style="height: 20px;"></div>
 
 
     <div id="reportCard" style="
@@ -122,6 +122,7 @@
     padding: 20px; 
     font-family: Arial, sans-serif; 
     font-size: 12px; 
+    display: none;
     border-radius: 15px; 
     background-color: #e8f9e1; 
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); 
@@ -173,7 +174,8 @@
                     <th style="text-align: left; padding: 5px; width: 25%; background-color: white;">Submitted By</th>
                     <td id="submittedBy" style="padding: 5px; width: 40%; background-color: white;" colspan="2"></td>
                     <td id="refNo" style="text-align: center; padding: 5px; width: 35%; background-color: white;">
-                        <strong>RefNo: </strong>SRI/AA/6154</td>
+                        <strong>RefNo: </strong>SRI/AA/6154
+                    </td>
                 </tr>
                 <tr>
                     <th style="text-align: left; padding: 5px; background-color: white;">Colour</th>
@@ -181,7 +183,8 @@
                     <td rowspan="4" colspan="1" style="text-align: center; padding: 5px; background-color: white;">
                     </td>
                     <td rowspan="4" colspan="1" style="text-align: center; padding: 5px; background-color: white;">
-                        <img id="imgGem" src="" alt="Gem Image" style="max-width: 110px; max-height: 110px; object-fit: contain;">
+                        <img id="imgGem" src="images/loading.gif" alt="Gem Image"
+                            style="max-width: 110px; max-height: 110px; object-fit: contain;">
                     </td>
                 </tr>
                 <tr>
@@ -221,14 +224,16 @@
                     <td id="mm" colspan="" style="text-align: center; padding: 5px; background-color: white;">
                         <strong>MM:</strong> N/A
                     </td>
-            
+
                     <td style="text-align: center; padding: 5px; background-color: white;">
-                        <img class="logo-r" src="images/sign.png" alt="Logo" style="max-width: 80px; height: auto; background-color: white;">
+                        <img class="logo-r" src="images/sign.png" alt="Logo"
+                            style="max-width: 80px; height: auto; background-color: white;">
                     </td>
                 </tr>
                 <tr>
                     <th style="text-align: left; padding: 5px; background-color: white;">Inclusions</th>
-                    <td id="inclusions" style="padding: 5px; background-color: white;" colspan="2">: Wood Grain Effect</td>
+                    <td id="inclusions" style="padding: 5px; background-color: white;" colspan="2">: Wood Grain Effect
+                    </td>
                     <td style="text-align: center; padding: 5px; background-color: white;">KARAN VERMA, GEMOLOGIST</td>
                 </tr>
                 <tr>
@@ -237,7 +242,7 @@
                     <td style="text-align: center; padding: 5px; background-color: white;">For, SRI LABS KANPUR</td>
                 </tr>
             </table>
-            
+
 
         </div>
         <div style="text-align: left; font-weight: bold; font-size: 14px; border: 1px solid #000; border-radius: 18px; padding: 8px; 
@@ -249,12 +254,10 @@
 
     <!-- Download The Report -->
 
-    <a id="download" href="#"
-        style="display: inline-block; padding: 10px 20px; background-color: #4CAF50; color: white; text-align: center; 
-   text-decoration: none; font-size: 16px; font-weight: bold; border-radius: 8px; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); 
-   transition: background-color 0.3s ease, transform 0.2s ease; margin: 20px auto; display: block; width: 150px; cursor: pointer;">
+    <label id="download" style="flex: 1; padding: 10px 20px; background-color: green; color: #fff; cursor: pointer; font-weight: bold; border-radius: 5px; text-align: center; display: none; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); transition: all 0.3s ease; margin: 10px;">
         Download Report
-    </a>
+    </label>
+    
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
     <script>
@@ -280,7 +283,7 @@
                         // Create an invisible temporary link to trigger download
                         var tempLink = document.createElement('a');
                         tempLink.href = imageData;
-                        tempLink.download = "reportCard.jpg";
+                        tempLink.download = "GemReport.jpg";
 
                         // Append the link to the body to trigger the download
                         document.body.appendChild(tempLink);
@@ -421,8 +424,10 @@
                     if (found) {
                         // Show the report card and hide not found and form for search
                         $("#notFound").hide();
+                        document.getElementById("loadingSpinner").style.display = "none";
                         $("#formForSearch").hide();
-                        $("#downloadBtn").show();
+                        $("#download").show();
+                        $("#reportCard").show();
                     } else {
                         // Hide the report card and show not found and form for search
                         document.getElementById("loadingSpinner").style.display = "none";
