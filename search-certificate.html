@@ -110,167 +110,141 @@
     <!-- Card  -->
 
 
-    <div id="reportCard" style="width: 90%; margin: 5%; border: 1px solid #ccc; padding: 20px; font-family: Arial, sans-serif; font-size: 12px; 
-    border-radius: 15px; background-color: #e8f9e1; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);display: none;">
+
+
+    <div id="reportCard" style="
+    width: calc(100% - 10px); /* Full width minus 10px for margins */
+    max-width: 794px;        /* A4 width in pixels */
+    height: calc((calc(100% - 10px)) * 1.414); /* Height calculated dynamically based on width */
+    max-height: 1123px;      /* A4 height in pixels */
+    margin: 0 auto;          /* Center horizontally */
+    border: 1px solid #ccc; 
+    padding: 20px; 
+    font-family: Arial, sans-serif; 
+    font-size: 12px; 
+    border-radius: 15px; 
+    background-color: #e8f9e1; 
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); 
+    overflow-x: auto; /* Enable horizontal scrolling */
+    overflow-y: auto; /* Enable vertical scrolling */
+    box-sizing: border-box;">
+
+
         <div style="text-align: center; margin-bottom: 10px;">
-            <table style="
-            background-color: white; /* Clean white background */
-            width: 100%; 
-            border-radius: 15px; /* Rounded edges */
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
-            padding: 0px; 
-            margin-bottom: 0px;
-            border: 1px solid #4CAF50; /* Green border */
-            border-collapse: separate; /* Ensures rounded corners are visible */
-            overflow: hidden;">
+            <table style="background-color: white; width: 100%; border-radius: 15px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+        padding: 0px; margin-bottom: 0px; border: 1px solid #4CAF50; border-collapse: separate; overflow: hidden;">
                 <tr>
-                    <!-- Left logo taking 15% width -->
-                    <th rowspan="2" style="
-                    width: 15%; 
-                    text-align: center; 
-                    background-color: white;
-                    padding: 10px; 
-                    border: none;">
+                    <th rowspan="2"
+                        style="width: 15%; text-align: center; background-color: white; padding: 10px; border: none;">
                         <img src="images/logo.png" alt="Logo" style="max-height: 50px;">
                     </th>
-
-                    <!-- Center titles taking 70% width -->
-                    <th colspan="3" style="
-                    width: 70%; 
-                    font-size: 20px; 
-                    color: #4CAF50; /* Green text */
-                    font-weight: bold; 
-                    background-color: white;
-                    text-align: center; 
-                    border: none; 
-                    padding: 5px;">
+                    <th colspan="3" style="width: 70%; font-size: 14px; color: #4CAF50; font-weight: bold; background-color: white; 
+                text-align: center; border: none; padding-left: 5px;">
                         SRI LABS KANPUR
                     </th>
-
-                    <!-- Right image taking 15% width -->
-                    <th rowspan="2" style="
-                    width: 15%; 
-                    text-align: center; 
-                    background-color: white;
-                    padding: 10px; 
-                    border: none;">
+                    <th rowspan="2"
+                        style="width: 15%; text-align: center; background-color: white; padding: 10px; border: none;">
                         <img src="images/microscope-pan-pdf-removebg-preview.png" alt="Microscope"
                             style="max-height: 50px;">
                     </th>
                 </tr>
                 <tr>
-                    <!-- Hindi title underneath the English title -->
-                    <th colspan="3" style="
-                    font-size: 14px; 
-                    background-color: white;
-                    color: #4CAF50; /* Matches the main title color */
-                    text-align: center; 
-                    border: none; 
-                    padding: 0;">
+                    <th colspan="3" style="font-size: 11px; background-color: white; color: #4CAF50; text-align: center; 
+                border: none; padding: 0;">
                         श्री प्रयोगशाला कानपुर
                     </th>
                 </tr>
                 <tr>
-                    <!-- Full-width address line -->
-                    <td colspan="5" style="
-                    font-size: 12px; 
-                    color: #333; 
-                    text-align: center; 
-                    padding: 10px; 
-                    border: none;">
+                    <td colspan="5"
+                        style="font-size: 12px; color: #333; text-align: center; padding: 10px; border: none;">
                         30/72A Etawa Bazar, Kanpur (UP) | Email: srilabskanpur@gmail.com
                     </td>
                 </tr>
             </table>
-
         </div>
         <div style="text-align: center; font-weight: bold; margin: 15px auto; border-radius: 30px; background-color: #388E3C; 
-            color: #fff; padding: 10px; width: 100%; box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);">
+        color: #fff; padding: 10px; width: 100%; box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);">
             Gems Testing Report
         </div>
-
-        <div style="overflow-x: auto; border-radius: 10px; box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); margin-bottom: 10px; background-color: white; padding: 5px;margin-bottom: 15px;
-            border: 1px solid #4CAF50; /* Green border */">
-            <table style="width: 100%; border-collapse: collapse; background-color: white;">
+        <div style="border-radius: 10px; box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); margin-bottom: 10px; 
+        background-color: white; padding: 5px; margin-bottom: 15px; border: 1px solid #4CAF50;">
+            <table style="max-width: 100%; border-color: white; background-color: white; border-collapse: collapse;">
                 <tr>
-                    <th style="text-align: left; padding: 5px; width: 25%; border: 1px solid #ccc;">Submitted By
-                    </th>
-                    <td id="submittedBy" style="padding: 5px; border: 1px solid #ccc; width: 50%;" colspan="2">:
-                    </td>
-                    <td id="refNo" style="text-align: center; padding: 5px; border: 1px solid #ccc; width: 25%;">
-                        RefNo:
-                        SRI/AA/6154</td>
+                    <th style="text-align: left; padding: 5px; width: 25%; background-color: white;">Submitted By</th>
+                    <td id="submittedBy" style="padding: 5px; width: 40%; background-color: white;" colspan="2"></td>
+                    <td id="refNo" style="text-align: center; padding: 5px; width: 35%; background-color: white;">
+                        <strong>RefNo: </strong>SRI/AA/6154</td>
                 </tr>
                 <tr>
-                    <th style="text-align: left; padding: 5px; border: 1px solid #ccc;">Colour</th>
-                    <td id="colour" style="padding: 5px; border: 1px solid #ccc;">: Red</td>
-                    <td rowspan="4" colspan="2" style="text-align: center; padding: 5px; border: 1px solid #ccc;">
-                        <img id="imgGem" src="" alt="Gem Image"
-                            style="max-width: 200px; max-height: 150px; object-fit: contain;">
+                    <th style="text-align: left; padding: 5px; background-color: white;">Colour</th>
+                    <td id="colour" style="padding: 5px; background-color: white;">: Red</td>
+                    <td rowspan="4" colspan="1" style="text-align: center; padding: 5px; background-color: white;">
+                    </td>
+                    <td rowspan="4" colspan="1" style="text-align: center; padding: 5px; background-color: white;">
+                        <img id="imgGem" src="" alt="Gem Image" style="max-width: 110px; max-height: 110px; object-fit: contain;">
                     </td>
                 </tr>
                 <tr>
-                    <th style="text-align: left; padding: 5px; border: 1px solid #ccc;">Weight</th>
-                    <td id="weight" style="padding: 5px; border: 1px solid #ccc;">: 5.50 Rt</td>
+                    <th style="text-align: left; padding: 5px; background-color: white;">Weight</th>
+                    <td id="weight" style="padding: 5px; background-color: white;">: 5.50 Rt</td>
                 </tr>
                 <tr>
-                    <th style="text-align: left; padding: 5px; border: 1px solid #ccc;">Species/Group</th>
-                    <td id="species" style="padding: 5px; border: 1px solid #ccc;">: Coral</td>
+                    <th style="text-align: left; padding: 5px; background-color: white;">Species/Group</th>
+                    <td id="species" style="padding: 5px; background-color: white;">: Coral</td>
                 </tr>
                 <tr>
-                    <th style="text-align: left; padding: 5px; border: 1px solid #ccc;">Shape &amp; Cut</th>
-                    <td id="shapeCut" style="padding: 5px; border: 1px solid #ccc;">: Capsule</td>
+                    <th style="text-align: left; padding: 5px; background-color: white;">Shape &amp; Cut</th>
+                    <td id="shapeCut" style="padding: 5px; background-color: white;">: Capsule</td>
                 </tr>
                 <tr>
-                    <th style="text-align: left; padding: 5px; border: 1px solid #ccc;">Transparency</th>
-                    <td colspan=2 id="transparency" style="padding: 5px; border: 1px solid #ccc;">: Opaque</td>
-                    <td rowspan="4" colspan="1" style="text-align: center; padding: 5px; border: 1px solid #ccc;">
-                        <img src="images/qr.png" alt="qr code" style="max-width: 100px; max-height: 100px;">
+                    <th style="text-align: left; padding: 5px; background-color: white;">Transparency</th>
+                    <td colspan=2 id="transparency" style="padding: 5px; background-color: white;">: Opaque</td>
+                    <td rowspan="4" colspan="1" style="text-align: center; padding: 5px; background-color: white;">
+                        <img src="images/qr.png" alt="qr code" style="max-width: 90px; max-height: 90px;">
                     </td>
                 </tr>
                 <tr>
-                    <th style="text-align: left; padding: 5px; border: 1px solid #ccc;">Optic Character</th>
-                    <td colspan=2 id="opticCharacter" style="padding: 5px; border: 1px solid #ccc;">: None</td>
+                    <th style="text-align: left; padding: 5px; background-color: white;">Optic Character</th>
+                    <td colspan=2 id="opticCharacter" style="padding: 5px; background-color: white;">: None</td>
                 </tr>
                 <tr>
-                    <th style="text-align: left; padding: 5px; border: 1px solid #ccc;">R.I</th>
-                    <td colspan=2 id="ri" style="padding: 5px; border: 1px solid #ccc;">: 1.486-1.658</td>
+                    <th style="text-align: left; padding: 5px; background-color: white;">R.I</th>
+                    <td colspan=2 id="ri" style="padding: 5px; background-color: white;">: 1.486-1.658</td>
                 </tr>
                 <tr>
-                    <th style="text-align: left; padding: 5px; border: 1px solid #ccc;">S.G</th>
-                    <td colspan=2 id="sg" style="padding: 5px; border: 1px solid #ccc;">: 2.6-2.7</td>
+                    <th style="text-align: left; padding: 5px; background-color: white;">S.G</th>
+                    <td colspan=2 id="sg" style="padding: 5px; background-color: white;">: 2.6-2.7</td>
                 </tr>
                 <tr>
-                    <th style="text-align: left; padding: 5px; border: 1px solid #ccc;">Hardness</th>
-                    <td id="hardness" style="padding: 5px; border: 1px solid #ccc;">: 3.5</td>
-                    <td id="mm" style="text-align: center; padding: 5px; border: 1px solid #ccc;">MM: N/A</td>
-                    <td style="text-align: center; padding: 5px; border: 1px solid white; background-color: white;">
-                        <img class="logo-r" src="images/sign.png" alt="Logo"
-                            style="max-width: 100%; height: auto; background-color: white;">
+                    <th style="text-align: left; padding: 5px; background-color: white;">Hardness</th>
+                    <td id="hardness" style="padding: 5px; background-color: white;">: 3.5</td>
+                    <td id="mm" colspan="" style="text-align: center; padding: 5px; background-color: white;">
+                        <strong>MM:</strong> N/A
+                    </td>
+            
+                    <td style="text-align: center; padding: 5px; background-color: white;">
+                        <img class="logo-r" src="images/sign.png" alt="Logo" style="max-width: 80px; height: auto; background-color: white;">
                     </td>
                 </tr>
                 <tr>
-                    <th style="text-align: left; padding: 5px; border: 1px solid #ccc;">Inclusions</th>
-                    <td id="inclusions" style="padding: 5px; border: 1px solid #ccc;" colspan="2">: Wood Grain
-                        Effect</td>
-                    <td style="text-align: center; padding: 5px; border: 1px solid white; background-color: white;">
-                        KARAN VERMA, GEMOLOGIST
-                    </td>
+                    <th style="text-align: left; padding: 5px; background-color: white;">Inclusions</th>
+                    <td id="inclusions" style="padding: 5px; background-color: white;" colspan="2">: Wood Grain Effect</td>
+                    <td style="text-align: center; padding: 5px; background-color: white;">KARAN VERMA, GEMOLOGIST</td>
                 </tr>
                 <tr>
-                    <th style="text-align: left; padding: 5px; border: 1px solid #ccc;">Remark</th>
-                    <td id="remark" style="padding: 5px; border: 1px solid #ccc;" colspan="2">: N-E-H</td>
-                    <td style="text-align: center; padding: 5px; border: 1px solid #ccc;">For, SRI LABS KANPUR</td>
+                    <th style="text-align: left; padding: 5px; background-color: white;">Remark</th>
+                    <td id="remark" style="padding: 5px; background-color: white;" colspan="2">: N-E-H</td>
+                    <td style="text-align: center; padding: 5px; background-color: white;">For, SRI LABS KANPUR</td>
                 </tr>
             </table>
-        </div>
+            
 
+        </div>
         <div style="text-align: left; font-weight: bold; font-size: 14px; border: 1px solid #000; border-radius: 18px; padding: 8px; 
-    background-color: #d6f7d6; margin: 10px; box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);" id="identifyAs">
+        background-color: #d6f7d6; margin: 10px; box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);" id="identifyAs">
             IDENTIFIED AS :- NATURAL:-CORAL (MUNGA)
         </div>
     </div>
-
 
 
     <!-- Download The Report -->
@@ -410,7 +384,7 @@
                             found = true; // Set the flag to true when data is found
                             Columns = "";
                             document.getElementById("identifyAs").innerHTML = "IDENTIFIED AS :- NATURAL:-" + value[4] + ":-(" + value[0] + ")";
-                            document.getElementById("refNo").innerHTML = "RefNo: " + value[1];
+                            document.getElementById("refNo").innerHTML = "<strong>RefNo: </strong>" + value[1];
                             document.getElementById("colour").innerHTML = value[2];
                             document.getElementById("weight").innerHTML = value[3] + " Rt";
                             document.getElementById("species").innerHTML = value[4];
@@ -419,7 +393,7 @@
                             document.getElementById("opticCharacter").innerHTML = value[7];
                             document.getElementById("ri").innerHTML = value[8];
                             document.getElementById("sg").innerHTML = value[9];
-                            document.getElementById("mm").innerHTML = "MM : " + value[10];
+                            document.getElementById("mm").innerHTML = "<strong>MM:</strong> " + value[10];
                             document.getElementById("hardness").innerHTML = value[11];
                             document.getElementById("inclusions").innerHTML = value[12];
                             document.getElementById("remark").innerHTML = value[13];
