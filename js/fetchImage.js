@@ -25,7 +25,6 @@ async function fetchAndSetImage(url, imgElementId) {
             imgElement.src = dataUrl;
             document.getElementById("loadingSpinner").style.display = "none";
             $("#reportCard").show();
-            $("#download").show();
         } else {
             console.error(`Image element with ID "${imgElementId}" not found.`);
         }

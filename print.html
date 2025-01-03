@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html class="js no-touch" style>
+
+<head>
+    <style>
+        * {
+            padding: 0pt;
+            margin: 0pt
+        }
+
+        h3.type.serch-result {
+            margin-bottom: 20px;
+            margin-top: 20px
+        }
+
+        .overflow-div {
+            overflow-x: auto;
+            height: 450px
+        }
+
+        .card-front {
+            width: 50%;
+            margin-right: auto;
+            margin-left: auto
+        }
+
+        .container-inner {
+            width: 428pt
+        }
+
+        .g-table th.report-type {
+            font-family: Tahoma, Verdana, sans-serif;
+            font-weight: bold;
+            width: 100%;
+            font-size: 13.5pt;
+            background-color: green;
+            color: white;
+            text-align: center
+        }
+
+        .table-header {
+            width: 100%;
+            border-collapse: collapse
+        }
+
+        .table-header th,
+        .table-header td {
+            color: green;
+            margin: 0pt;
+            padding: 0pt;
+            text-align: center;
+            font-weight: bold
+        }
+
+        img.logo-r {
+            width: 57pt
+        }
+
+        img.microscope {
+            width: 47pt
+        }
+
+        img.product {
+            width: 95pt
+        }
+
+        img.product:hover {
+            cursor: -webkit-zoom-in;
+            cursor: -moz-zoom-in;
+            -ms-transform: scale(1.5);
+            -webkit-transform: scale(1.5);
+            transform: scale(1.5)
+        }
+
+        th.c-name {
+            white-space: nowrap;
+            font-size: 24px
+        }
+
+        th.c-name-hindi {
+            white-space: nowrap;
+            font-size: 24px
+        }
+
+        td.c-add {
+            white-space: nowrap;
+            font-size: 14px
+        }
+
+        .g-table {
+            width: 100%;
+            line-height: normal;
+            border-collapse: collapse
+        }
+
+        .g-table th {
+            font-family: serif !important;
+            white-space: nowrap;
+            font-size: 12pt;
+            text-align: justify
+        }
+
+        .g-table td {
+            font-family: serif !important;
+            white-space: nowrap;
+            font-size: 12pt;
+            text-align: justify
+        }
+
+        td.r-no,
+        th.imp {
+            color: darkred;
+            font-weight: bold
+        }
+
+        span.mm {
+            font-weight: bold
+        }
+
+        img.qr-code {
+            width: 90pt
+        }
+
+        img.jksign {
+            width: 110pt
+        }
+
+        .fg-footer {
+            font-family: serif !important;
+            white-space: nowrap;
+            font-weight: bold;
+            border: 1.75px solid green;
+            box-shadow: 0px 4px 0px 0px green;
+            border-radius: 12pt;
+            background-clip: padding-box;
+            font-size: 13.5pt;
+            background-color: #f3f7d6;
+            color: green
+        }
+
+        span.sign-text {
+            text-align: center;
+            color: green;
+            font-size: 10.5pt
+        }
+
+        span.sign-text2 {
+            text-align: center;
+            color: green;
+            font-size: 12.5pt
+        }
+
+        @media only screen and (max-width:500px) {
+            .overflow-div {
+                overflow-x: auto;
+                height: 300px
+            }
+
+            .card-front {
+                margin-right: 0px;
+                margin-left: 0px
+            }
+
+            .container-inner {
+                width: 242pt
+            }
+
+            th.c-name {
+                font-size: 14px
+            }
+
+            th.c-name-hindi {
+                font-size: 14px
+            }
+
+            td.c-add {
+                font-size: 8px
+            }
+
+            img.logo-r {
+                width: 38px
+            }
+
+            img.microscope {
+                width: 30px
+            }
+
+            .g-table th.report-type {
+                font-size: 8.5pt
+            }
+
+            img.product {
+                width: 57pt
+            }
+
+            img.qr-code {
+                width: 60pt
+            }
+
+            img.jksign {
+                width: 60pt
+            }
+
+            .g-table th {
+                font-size: 7pt
+            }
+
+            .g-table td {
+                font-size: 7pt
+            }
+
+            span.sign-text {
+                text-align: center;
+                color: green;
+                font-size: 6pt
+            }
+
+            span.sign-text2 {
+                text-align: center;
+                color: green;
+                font-size: 7pt
+            }
+
+            .fg-footer {
+                font-size: 7.5pt
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Form -->
+    <div class="container" id="formForSearch2" style="width: 100%; max-width: 600px; margin: 20px auto; padding: 20px; background-color: white; border-radius: 10px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);">
+        <h3 class="search" style="text-align: center; font-size: 24px; font-weight: bold; color: #388E3C; margin-bottom: 20px;">
+            Print Card
+        </h3>
+        <div class="grid_3 grid_5">
+            <form action="#" method="get" style="display: flex; flex-direction: column; gap: 15px; background-color:white;" id="formForPrint">
+                <label style="font-size: 14px; font-weight: bold; color: #333;">Report No:</label>
+                <input type="text" name="reportNo2" value="SRI/AA/" required="" style="padding: 10px; font-size: 14px; border: 1px solid #ccc; border-radius: 8px; width: 100%; box-sizing: border-box;">
+    
+                <label for="service-" style="font-size: 14px; font-weight: bold; color: #333;">Weight:</label>
+                <input type="text" name="weight2" style="padding: 10px; font-size: 14px; border: 1px solid #ccc; border-radius: 8px; width: 100%; box-sizing: border-box;">
+    
+                <input type="submit" name="Search" value="Search" style="padding: 10px 20px; font-size: 16px; color: #fff; background-color: #388E3C; border: none; border-radius: 8px; cursor: pointer; transition: background-color 0.3s ease;">
+                </form>
+        </div>
+    </div>
+
+    
+
+    <div class=overflow-div style="margin-left: 10px;">
+        <div class=card-front>
+            <div class=container-inner>
+                <table class=table-header>
+                    <tbody>
+                        <tr>
+                            <th rowspan=3><img class=logo-r src="">
+                            </th>
+                            <th colspan=3 class=c-name>Sri Labs Kanpur</th>
+                            <th rowspan=3><img>
+                            </th>
+                        </tr>
+                        <tr>
+                            <th colspan=3 class=c-name-hindi>श्री प्रयोगशाला कानपुर</th>
+                        </tr>
+                        <tr>
+                            <td colspan=3 class=c-add>30/72 A Etawa Bazar,Maheshwari Mohal, Kanpur(UP)
+                                Email- adityagopal5024@gmail.com</td>
+                        </tr>
+                </table>
+            </div>
+            <div class=container-inner>
+                <table class=g-table>
+                    <tbody>
+                        <tr>
+                            <th colspan=4 class=report-type>Gems Testing Report</th>
+                        </tr>
+                        <tr>
+                            <th>Submitted By</th>
+                            <td colspan=2>: </td>
+                            <td colspan=2 style=text-align:center class=r-no id="refNo2">RefNo: KGTL/AA/6154</td>
+                        </tr>
+                        <tr>
+                            <th>Colour</th>
+                            <td id="colour2">: Red</td>
+                            <td rowspan=8 style=text-align:center>
+                                <img src="" alt="">
+                            </td>
+                            <td rowspan=9 style=text-align:center>
+                                <img src="" alt="">
+                            </td>
+                        </tr>
+                        <tr>
+                            <th >Weight</th>
+                            <th class=imp id="weight2">: 5.50 Rt</th>
+                        </tr>
+                        <tr>
+                            <th>Spacies/Group</th>
+                            <td id="species2">: coral</td>
+                        </tr>
+                        <tr>
+                            <th>Shape &amp; Cut</th>
+                            <td id="shapeCut2">: capsul</td>
+                        </tr>
+                        <tr>
+                            <th>Transparency</th>
+                            <td id="transparency2">: opaque</td>
+                        </tr>
+                        <tr>
+                            <th>Optic Character</th>
+                            <td id="opticCharacter2">: none</td>
+                        </tr>
+                        <tr>
+                            <th>R.I</th>
+                            <td id="ri2">: 1.486-1.658</td>
+                        </tr>
+                        <tr>
+                            <th>S.G</th>
+                            <td id="sg2">: 2.6-2.7</td>
+                        </tr>
+                        <tr>
+                            <th>Hardness</th>
+                            <td id="hardness2">: 3.5
+                            <td style=text-align:center><span class=mm id="mm2">MM:</span> N/A
+                        </tr>
+                        <tr>
+                            <th>Inclusions</th>
+                            <td colspan=2 id="inclusions2">: Wood Grain Effect</td>
+                            <td><span class=sign-text>J.K. DWIVEDI GEMOLOGIST</span></td>
+                        </tr>
+                        <tr>
+                            <th>Remark</th>
+                            <td colspan=2 id="remark2">: N-E-H</td>
+                            <td><span class=sign-text2>For , KGTL LABORATORY</span></td>
+                        </tr>
+                </table>
+                <div id="identifyAs2" class=fg-footer style=text-align:left>&nbsp; IDENTIFIED AS :- NATURAL:-CORAL(MUNGA)
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+        // Handle form submission
+        $("formForPrint").on("submit", function (event) {
+            event.preventDefault(); // Prevent form from submitting and page reloading
+
+            // Get the values from the form fields
+            var reportNo = $("input[name='reportNo2']").val().trim(); // Get the Report No
+            var weight = $("input[name='weight2']").val().trim(); // Get the Weight
+
+            // Check if values are not empty
+            if (reportNo && weight) {
+                console.log("Report No: " + reportNo); // Log the Report No
+                console.log("Weight: " + weight); // Log the Weight
+                
+                // You can now use these values as needed in your script, for example, fetching data or displaying results
+                // If you want to send the data to a server or process it, you can proceed here
+            } else {
+                // Display an alert if any of the fields are empty
+                alert("Please enter both Report No and Weight.");
+            }
+                // Fetch all data from the Apps Script
+                $.getJSON("https://script.google.com/macros/s/AKfycby0uS8neN8VpbxnmAIdpJbWF6KbsvvlwgbwrlZBc22FtZmtL12MKKs7JSxLPYEiONpd/exec", function (data) {
+
+                    var Table = "", Rows = "", Columns = "";
+                    var found = false; // Flag to check if matching data is found
+
+                    // Loop through the fetched data
+                    $.each(data, function (key, value) {
+                        // Log the value to see the exact comparison
+                        console.log("Comparing Report No: " + value[1] + " with " + reportNo);
+                        console.log("Comparing Weight: " + value[3] + " with " + weight);
+
+                        // Convert value[3] to string and trim it, then compare
+                        if (value[1].trim() === reportNo && String(value[3]).trim() === weight) {
+                            found = true; // Set the flag to true when data is found
+                            Columns = "";
+                            document.getElementById("identifyAs2").innerHTML = "IDENTIFIED AS :- NATURAL:-" + value[4] + ":-(" + value[0] + ")";
+                            document.getElementById("refNo2").innerHTML = "<strong>RefNo: </strong>" + value[1];
+                            document.getElementById("colour2").innerHTML = value[2];
+                            document.getElementById("weight2").innerHTML = value[3] + " Rt";
+                            document.getElementById("species2").innerHTML = value[4];
+                            document.getElementById("shapeCut2").innerHTML = value[5];
+                            document.getElementById("transparency2").innerHTML = value[6];
+                            document.getElementById("opticCharacter2").innerHTML = value[7];
+                            document.getElementById("ri2").innerHTML = value[8];
+                            document.getElementById("sg2").innerHTML = value[9];
+                            document.getElementById("mm2").innerHTML = "<strong>MM:</strong> " + value[10];
+                            document.getElementById("hardness2").innerHTML = value[11];
+                            document.getElementById("inclusions2").innerHTML = value[12];
+                            document.getElementById("remark2").innerHTML = value[13];
+                            console.log(value[14].replace("/view", "/preview").split('?')[0]);
+                            // document.getElementById("imgGem").src = value[14].replace("/view", "/preview").split('?')[0];
+                            fetchAndSetImage(value[14], "imgGem2")
+                            // Create a table row for each matching entry
+                            $.each(value, function (key1, value1) {
+                                Columns = Columns + '<td>' + value1 + '</td>';
+                            });
+
+                            Rows = Rows + '<tr>' + Columns + '</tr>';
+                        }
+                    });
+
+                    // If matching rows are found, append them to the table body
+                    // if (Rows) {
+                    //     $("#TableBody").html(Rows); // Update the table body with matching rows
+                    // } else {
+                    //     $("#TableBody").html('<tr><td colspan="15">No matching data found.</td></tr>'); // Display a message if no data is found
+                    // }
+
+                    // Show/hide the divs based on the result
+                    // if (found) {
+                    //     // Show the report card and hide not found and form for search
+                    //     $("#notFound").hide();
+                    //     document.getElementById("loadingSpinner").style.display = "none";
+                    //     $("#formForSearch").hide();
+                    //     $("#download").show();
+                    //     $("#reportCard").show();
+                    // } else {
+                    //     // Hide the report card and show not found and form for search
+                    //     document.getElementById("loadingSpinner").style.display = "none";
+                    //     $("#reportCard").hide();
+                    //     $("#notFound").show();
+                    //     $("#formForSearch").hide();
+                    //     $("#downloadBtn").hide();
+                    // }
+                });
+            });
+        });
+    </script>
+
+</body>
