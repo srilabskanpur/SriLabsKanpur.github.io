@@ -1,0 +1,112 @@
+#reportCard {
+    width: calc(100% - 10px); /* Full width minus 10px for margins */
+    max-width: 794px;        /* A4 width in pixels */
+    height: calc((calc(100% - 10px)) * 1.414); /* Height calculated dynamically based on width */
+    max-height: 1123px;      /* A4 height in pixels */
+    margin: 0 auto;          /* Center horizontally */
+    border: 1px solid #ccc; 
+    padding: 20px; 
+    font-family: Arial, sans-serif; 
+    font-size: 12px; 
+    display: none;
+    border-radius: 15px; 
+    background-color: #e8f9e1; 
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); 
+    overflow-x: auto; /* Enable horizontal scrolling */
+    overflow-y: auto; /* Enable vertical scrolling */
+    box-sizing: border-box;
+}
+
+#reportCard .table-header {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+#reportCard table {
+    background-color: white;
+    width: 100%;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 0px;
+    margin-bottom: 0px;
+    border: 1px solid #4CAF50;
+    border-collapse: separate;
+    overflow: hidden;
+}
+
+#reportCard th {
+    width: 15%;
+    text-align: center;
+    background-color: white;
+    padding: 10px;
+    border: none;
+}
+
+#reportCard .microscope-img,
+#reportCard .logo-img {
+    max-height: 50px;
+}
+
+#reportCard .report-title {
+    text-align: center;
+    font-weight: bold;
+    margin: 15px auto;
+    border-radius: 30px;
+    background-color: #388E3C;
+    color: #fff;
+    padding: 10px;
+    width: 100%;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+#reportCard .details-table {
+    border-radius: 10px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px;
+    background-color: white;
+    padding: 5px;
+    margin-bottom: 15px;
+    border: 1px solid #4CAF50;
+}
+
+#reportCard .details-table th,
+#reportCard .details-table td {
+    padding: 5px;
+    background-color: white;
+}
+
+#reportCard .qr-img {
+    max-width: 90px;
+    max-height: 90px;
+}
+
+#reportCard .logo-r {
+    max-width: 80px;
+    height: auto;
+    background-color: white;
+}
+
+#reportCard #identifyAs {
+    text-align: left;
+    font-weight: bold;
+    font-size: 14px;
+    border: 1px solid #000;
+    border-radius: 18px;
+    padding: 8px;
+    background-color: #d6f7d6;
+    margin: 10px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+#reportCard .submitted-details td {
+    width: 40%;
+}
+
+#reportCard .refNo {
+    text-align: center;
+    padding: 5px;
+}
+
+#reportCard .image-container {
+    text-align: center;
+}

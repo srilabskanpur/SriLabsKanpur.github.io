@@ -17,6 +17,7 @@
     </script>
     <!-- Custom Theme files -->
     <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+    <!-- <link href="css/card.css" rel="stylesheet" type="text/css" media="all" /> -->
     <link href="css/top-header.css" rel="stylesheet" type="text/css" media="all" />
     <!-- Custom Theme files -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
@@ -88,21 +89,40 @@
 
 
     <!-- Form -->
-    <div class="container" id="formForSearch">
-        <h3 class="search">Search Results</h3>
+    <div class="container" id="formForSearch" style="width: 100%; max-width: 600px; margin: 20px auto; padding: 20px; background-color: white; border-radius: 10px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);">
+        <h3 class="search" style="text-align: center; font-size: 24px; font-weight: bold; color: #388E3C; margin-bottom: 20px;">
+            Search Results
+        </h3>
         <div class="grid_3 grid_5">
-            <form action="#" method="get">
-                <label>Report No:</label>
-                <input type="text" name="reportNo" value="SRI/AA/" required="">
-
-                <label for="service-">Weight:</label>
-                <input type="text" name="weight">
-
-                <input type="submit" name="Search" value="Search">
-                <br><br>
-            </form>
+            <form action="#" method="get" style="display: flex; flex-direction: column; gap: 15px; background-color:white;">
+                <label style="font-size: 14px; font-weight: bold; color: #333;">Report No:</label>
+                <input type="text" name="reportNo" value="SRI/AA/" required="" style="padding: 10px; font-size: 14px; border: 1px solid #ccc; border-radius: 8px; width: 100%; box-sizing: border-box;">
+    
+                <label for="service-" style="font-size: 14px; font-weight: bold; color: #333;">Weight:</label>
+                <input type="text" name="weight" style="padding: 10px; font-size: 14px; border: 1px solid #ccc; border-radius: 8px; width: 100%; box-sizing: border-box;">
+    
+                <input type="submit" name="Search" value="Search" style="padding: 10px 20px; font-size: 16px; color: #fff; background-color: #388E3C; border: none; border-radius: 8px; cursor: pointer; transition: background-color 0.3s ease;">
+                </form>
         </div>
     </div>
+    
+    <script>
+        // Add hover and active states for the submit button using JavaScript
+        const submitButton = document.querySelector('input[type="submit"]');
+        submitButton.addEventListener('mouseover', function() {
+            this.style.backgroundColor = '#2c6e2a';
+        });
+        submitButton.addEventListener('mouseout', function() {
+            this.style.backgroundColor = '#388E3C';
+        });
+        submitButton.addEventListener('mousedown', function() {
+            this.style.backgroundColor = '#2b5d27';
+        });
+        submitButton.addEventListener('mouseup', function() {
+            this.style.backgroundColor = '#2c6e2a';
+        });
+    </script>
+    
 
 
 
@@ -110,8 +130,6 @@
     <!-- Card  -->
 
     <div style="height: 20px;"></div>
-
-
     <div id="reportCard" style="
     width: calc(100% - 10px); /* Full width minus 10px for margins */
     max-width: 794px;        /* A4 width in pixels */
@@ -133,15 +151,15 @@
 
         <div style="text-align: center; margin-bottom: 10px;">
             <table style="background-color: white; width: 100%; border-radius: 15px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
-        padding: 0px; margin-bottom: 0px; border: 1px solid #4CAF50; border-collapse: separate; overflow: hidden;">
+        padding: 0px; margin-bottom: 0px; border: 1px solid #388E3C; border-collapse: separate; overflow: hidden;">
                 <tr>
                     <th rowspan="2"
                         style="width: 15%; text-align: center; background-color: white; padding: 10px; border: none;">
                         <img src="images/logo.png" alt="Logo" style="max-height: 50px;">
                     </th>
-                    <th colspan="3" style="width: 70%; font-size: 14px; color: #4CAF50; font-weight: bold; background-color: white; 
+                    <th colspan="3" style="width: 70%; font-size: 16px; color: #388E3C; font-weight: bold; background-color: white; 
                 text-align: center; border: none; padding-left: 5px;">
-                        SRI LABS KANPUR
+                        <strong>SRI LABS KANPUR</strong>
                     </th>
                     <th rowspan="2"
                         style="width: 15%; text-align: center; background-color: white; padding: 10px; border: none;">
@@ -150,7 +168,7 @@
                     </th>
                 </tr>
                 <tr>
-                    <th colspan="3" style="font-size: 11px; background-color: white; color: #4CAF50; text-align: center; 
+                    <th colspan="3" style="font-size: 13px; background-color: white; color: #388E3C; text-align: center; 
                 border: none; padding: 0;">
                         श्री प्रयोगशाला कानपुर
                     </th>
@@ -158,7 +176,7 @@
                 <tr>
                     <td colspan="5"
                         style="font-size: 12px; color: #333; text-align: center; padding: 10px; border: none;">
-                        30/72A Etawa Bazar, Kanpur (UP) | Email: srilabskanpur@gmail.com
+                        <strong>30/72A Etawa Bazar, Kanpur (UP) | Email: srilabskanpur@gmail.com</strong>
                     </td>
                 </tr>
             </table>
@@ -234,19 +252,19 @@
                     <th style="text-align: left; padding: 5px; background-color: white;">Inclusions</th>
                     <td id="inclusions" style="padding: 5px; background-color: white;" colspan="2">: Wood Grain Effect
                     </td>
-                    <td style="text-align: center; padding: 5px; background-color: white;">KARAN VERMA, GEMOLOGIST</td>
+                    <td style="text-align: center; padding: 5px; background-color: white; color: #388E3C; ">KARAN VERMA, GEMOLOGIST</td>
                 </tr>
                 <tr>
                     <th style="text-align: left; padding: 5px; background-color: white;">Remark</th>
                     <td id="remark" style="padding: 5px; background-color: white;" colspan="2">: N-E-H</td>
-                    <td style="text-align: center; padding: 5px; background-color: white;">For, SRI LABS KANPUR</td>
+                    <td style="text-align: center; padding: 5px; background-color: white; color: #388E3C; "><strong>For, SRI LABS KANPUR</strong></td>
                 </tr>
             </table>
 
 
         </div>
         <div style="text-align: left; font-weight: bold; font-size: 14px; border: 1px solid #000; border-radius: 18px; padding: 8px; 
-        background-color: #d6f7d6; margin: 10px; box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);" id="identifyAs">
+        background-color: #f3f7d6; margin: 10px; box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);" id="identifyAs">
             IDENTIFIED AS :- NATURAL:-CORAL (MUNGA)
         </div>
     </div>
@@ -348,8 +366,6 @@
         style="display: none; text-align: center; padding: 50px; background-color: #f8d7da; border-radius: 8px; border: 1px solid #f5c6cb; color: #721c24; font-family: Arial, sans-serif; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); width: 80%; margin: 0 auto;">
         <h1>No such record found!</h1>
     </div>
-
-
     <div style="height: 20px;"></div>
 
 
@@ -440,19 +456,13 @@
             });
         });
     </script>
-
-
-
-
-
 </body>
 
 <div class="footer" style="background-color: blue; padding: 10px 0;">
     <div class="container">
         <div class="footer-grids">
             <div class="logo2" style="color: white;">
-                <a href="index.php" style="color: white; text-decoration: none;">Sri Labs Kanpur, Uttar Pradesh
-                    208001</a>
+                <a href="index.php" style="color: white; text-decoration: none;">Sri Labs Kanpur, Uttar Pradesh 208001</a>
             </div>
         </div>
     </div>
